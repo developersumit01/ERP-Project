@@ -1,0 +1,29 @@
+.display-none{
+  display: none;
+}
+.scale-animation{
+  animation-name: scale;
+  animation-duration: 1s;
+  transition: .4s;
+}
+@keyframes scale {
+  0%{
+    scale: 0;
+  }
+  100%{
+    scale: 1;
+  }
+}
+.card-animation{
+  animation-name: card;
+  animation-duration: 2.3s;
+  transition: .4s;
+}
+@keyframes card {
+  10%{
+    scale: 1.2;
+  }
+  100%{
+    scale: .3;
+  }
+}

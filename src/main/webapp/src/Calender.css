@@ -1,0 +1,75 @@
+.calender-container {
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.weak-days {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.dates {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 8px;
+  /* border: 1px solid; */
+}
+.date {
+  /* border: 1px solid; */
+  height: 30px;
+  width: 30px;
+}
+.date-number {
+  cursor: pointer;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-option {
+  width: 10rem;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 600;
+  outline: none;
+  /* border: none;
+  border-radius: 5px; */
+}
+.color-red {
+  background-color: #fa5151;
+}
+.today-date {
+  background-color: #6c6cff;
+}
+.date-number:focus {
+  background-color: #65ffde;
+}
+@media (width<350px) {
+  .dates,
+  .weak-days {
+    width: 100%;
+  }
+  .date {
+    width: unset;
+  }
+}
