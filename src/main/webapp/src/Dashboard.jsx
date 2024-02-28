@@ -87,25 +87,27 @@ const Dashboard = () => {
               <span className="session">{session}</span>
             </div>
             <div className="photo">
-              <img src={profileImage} alt="" />
+              <img src={''} alt="Profile Image" />
             </div>
           </div>
-          <div className="main-card-container">
-            <MainCard
-              icon={attendanceIcon}
-              tittle={"Attendance"}
-              content={`${80.39} %`}
-            />
-            <MainCard
-              icon={feesDueIcon}
-              tittle={"Fees Due"}
-              content={`₹${64000}`}
-            />
-          </div>
-          <div className="card-container">
-            {cardItem.map((ele) => {
-              return <Card icon={ele.icon} tittle={ele.name} />;
-            })}
+          <div className="background-curve">
+            <div className="main-card-container">
+              <MainCard
+                icon={attendanceIcon}
+                tittle={"Attendance"}
+                content={`${80.39} %`}
+              />
+              <MainCard
+                icon={feesDueIcon}
+                tittle={"Fees Due"}
+                content={`₹${64000}`}
+              />
+            </div>
+            <div className="card-container">
+              {cardItem.map((ele) => {
+                return <Card icon={ele.icon} tittle={ele.name} />;
+              })}
+            </div>
           </div>
         </div>
       </div>

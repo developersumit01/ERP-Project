@@ -20,8 +20,6 @@ function UserLogin() {
   });
   const [displayCard, setDisplayCard] = useState("loginContainer");
   const setAnimation = (event) => {
-    // This is use to get the inner html text which is write inside the element.
-    // console.log(event.target.innerHTML);
     let name = event.target.name.split("_");
     // setCardAnimation("card-animation");
     setCardAnimation((prev) => ({
