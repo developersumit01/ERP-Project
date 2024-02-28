@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px solid red; */
+}
+.user-name{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px 0 10px 0;
+}
+.detail{
+    font-weight: 600;
+    margin-bottom: 5px;
+    word-spacing: 2px;
+}
+.session{
+    background: #bc91e5;
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.photo{
+    margin-top: 10px;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    border: 2px solid #bc91e5;
+    border-radius: 5px;
+}
+.border{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+.photo img{
+    /* background-size: cover; */
+    width: 10rem;
+    position: relative;
+    top: -20px;
+    left: -20px;
+    aspect-ratio: 1/1;
+}
+.main-dashboard-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#345FB4, #bc91e5);
+}
+.dashboard-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* margin-bottom: 20px; */
+    /* background-color: #345FB4; */
+    background-color: transparent;
+}
+.header{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+}
+.info{
+display: flex;
+flex-direction: column;
+}
+.main-card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    /* width: 100%; */
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 2rem;
+}
+@media (width<400px) {
+    .header{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+}
+@media (width<350px) {
+    .main-card-container{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+@media (width<900px) {
+    .card-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (width<600px) {
+    .dashboard-container{
+        width: 100%;
+    }
+    .card-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (width<350px) {
+    .card-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
