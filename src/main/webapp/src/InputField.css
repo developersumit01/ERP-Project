@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.input-container {
+  width: 90%;
+  display: flex;
+  gap: 10px;
+}
+.input-container .input {
+  position: relative;
+  display: flex;
+  flex-grow: 2;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #345fb4;
+}
+.input-container .input textarea {
+  resize: none;
+  /* height: 2rem; */
+  flex-grow: 2;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  width: 97%;
+  /* font-weight: 600; */
+  outline: none;
+}
+.lable {
+  font-weight: 600;
+  width: 12rem;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+}
+.border-animation {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0px;
+}
+
+.input-container .input textarea:focus + .border-animation {
+  border: unset;
+  border-bottom: 1px solid #2c2929;
+  background-color: transparent;
+  width: 100%;
+  left: 0%;
+  transition: 0.4s;
+}
+.input-container .input textarea:focus{
+      border: none;
+}
+@media (width<1200px) {
+  .input-container {
+    width: 100%;
+  }
+}
+@media (width<500px) {
+  .input-container .input textarea,
+  .lable {
+    font-weight: unset;
+    font-size: unset;
+  }
+  .lable {
+    width: 5rem;
+  }
+}
+@media (width<350px) {
+  .input-container {
+    width: 100%;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .input-container .input textarea {
+    width: 90%;
+  }
+}
