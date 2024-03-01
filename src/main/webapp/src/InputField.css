@@ -54,6 +54,7 @@
 @media (width<1200px) {
   .input-container {
     width: 100%;
+    flex-wrap: wrap;
   }
 }
 @media (width<500px) {
@@ -63,7 +64,8 @@
     font-size: unset;
   }
   .lable {
-    width: 5rem;
+    width: 100%;
+    font-weight: 600;
   }
 }
 @media (width<350px) {

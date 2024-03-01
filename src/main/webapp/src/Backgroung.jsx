@@ -1,5 +1,6 @@
 import "./Background.css";
-import MyProfile from "./MyProfile";
+// import MyProfile from "./MyProfile";
+import Calender from './Calender';
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
   { name: "Roll No.", value: "2101280130002", editable: false },
@@ -52,7 +53,8 @@ const Background = () => {
           </div>
 
           <div className="background-curve">
-            <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} />
+            {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
+            <Calender />
           </div>
         </div>
       </div>

@@ -19,6 +19,8 @@ const Calender = () => {
   const temp = [...Array(42).keys()];
   let date = 1;
   const todayDate = new Date().getDate();
+  const todayYear = new Date().getFullYear();
+  const todayMonth = new Date().getMonth();
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(
@@ -36,7 +38,6 @@ const Calender = () => {
     } else if (e.target.name === "year") {
       setCurrentYear(e.target.value);
     }
-    console.log("inside function", currentMonth, currentYear);
   };
   const makeOptions = (array) => {
     return (
@@ -81,7 +82,13 @@ const Calender = () => {
                     ele >= dayOfFirstDay && date <= numberOfDays
                       ? `date-number ${
                           ele % 7 == 0 || ele % 7 == 6 ? "color-red" : ""
-                        } ${date == todayDate ? "today-date" : ""}`
+                        } ${
+                          date == todayDate &&
+                          todayMonth == months.indexOf(currentMonth) + 1 &&
+                          todayYear == currentYear
+                            ? "today-date"
+                            : ""
+                        }`
                       : ""
                   }`}>
                   {ele >= dayOfFirstDay && date <= numberOfDays ? date++ : ""}

@@ -1,5 +1,6 @@
 .main-background-container {
     width: 100%;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,11 +10,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* min-height: 90dvh; */
 }
 .background-container {
     width: 80%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto;
+    /* display: flex; */
+    min-height: 100dvh;
+    /* flex-direction: column; */
     gap: 25px;
     /* margin-bottom: 20px; */
     /* background-color: #345FB4; */
