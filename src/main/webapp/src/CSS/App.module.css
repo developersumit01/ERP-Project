@@ -55,7 +55,7 @@ body{
   border: 2px solid red;
 }
 
-.login-container,.forget-password-container,.admin-container{
+.loginContainer,.forgetPasswordContainer,.adminContainer{
   position:absolute;
   height: 33rem; 
   width: 20rem;
@@ -68,14 +68,14 @@ body{
   flex-direction: column;
   box-shadow: 11px 9px 20px 0px #231e1ec9;
 }
-.email-box,.password-box,.submit-box{
+.emailBox,.passwordBox,.submitBox{
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.email-box input,.password-box input{
+.emailBox input,.passwordBox input{
   height: 2rem;
   width: 80%;
   padding: 0 5px 0 5px;
@@ -87,14 +87,14 @@ body{
   font-weight: 600;
   letter-spacing: 1px;
 }
-.border-animation{
+.borderAnimation{
   position: absolute;
   bottom: 0px;
   left: 50%;
   width: 0px;
 }
 
-.email-box input:focus~.border-animation,.password-box input:focus~.border-animation{
+.emailBox input:focus~.borderAnimation,.passwordBox input:focus~.borderAnimation{
   border: unset;
   border-bottom: 1px solid #2c2929;
   background-color: transparent;
@@ -103,22 +103,22 @@ body{
   transition: 0.4s;
 }
 
-.login-icon{
+.loginIcon{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.login-icon label{
+.loginIcon label{
   font-size: 20px;
   font-weight: 700;
 }
-.submit-box{
+.submitBox{
   position: relative;
   bottom: 30px;
 }
-.submit-box input{
+.submitBox input{
   /* position: relative; */
   height: 2rem;
   width: 80%;
@@ -131,14 +131,14 @@ body{
   background-color: #1f41d65e;
   cursor: pointer;
 }
-.submit-box img{
+.submitBox img{
   position: absolute;
   /* top: -20px; */
   /* display: none; */
   right: 40px;
   filter: invert();
 }
-.display-none{
+.displayNone{
   display: none;
 }
 
@@ -146,7 +146,7 @@ body{
   position: relative;
   top: 20px;
 }
-.forget-password{
+.forgetPassword{
   width: 90%;
   position: absolute;
   display: flex;
@@ -154,7 +154,7 @@ body{
   padding: 0 10px 0 10px;
   bottom: 10px;
 }
-.forget-password-admin{
+.forgetPasswordAdmin{
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -169,21 +169,21 @@ body{
   color: #5a5b5c;
 }
 @media  (width<500px) {
-  .login-container,.forget-password-container,.admin-container{
+  .loginContainer,.forgetPasswordContainer,.adminContainer{
     height: 80dvh;
     width: 80vw;
   }
 }
 @media (width>1500px) {
   
-  .login-container,.forget-password-container,.admin-container{
+  .loginContainer,.forgetPasswordContainer,.adminContainer{
     height: 60rem;
     width: 40rem;
   }
-  .email-box input,.password-box input,.login-icon label{
+  .emailBox input,.passwordBox input,.loginIcon label{
     font-size: 26px;
   }
-  .login-icon img,.logo img{
+  .loginIcon img,.logo img{
     height: 7rem;
   }
 }

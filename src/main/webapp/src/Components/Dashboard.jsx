@@ -1,23 +1,23 @@
-import "./Dashboard.css";
-import profileImage from "./assets/images/profile.jpg";
-import attendanceIcon from "./assets/Icons/ic_attendance.svg";
-import feesDueIcon from "./assets/Icons/ic_fees_due.svg";
+import DashboardCSS from "../CSS/Dashboard.module.css";
+import profileImage from "../assets/images/profile.jpg";
+import attendanceIcon from "../assets/Icons/ic_attendance.svg";
+import feesDueIcon from "../assets/Icons/ic_fees_due.svg";
 import MainCard from "./MianCard.jsx";
 import Card from "./Card.jsx";
 // These are the icon which desplay in card.
-import playQuizIcon from "./assets/Icons/ic_quiz.svg";
-import assignmentIcon from "./assets/Icons/ic_assignment.svg";
-import holidayIcon from "./assets/Icons/ic_holiday.svg";
-import calenderIcon from "./assets/Icons/ic_calendra.svg";
-import resultIcon from "./assets/Icons/ic_results.svg";
-import dateSheetIcon from "./assets/Icons/ic_date_sheet.svg";
-import doubtsIcon from "./assets/Icons/ic_doubts.svg";
-import galleryIcon from "./assets/Icons/ic_gallery.svg";
-import leaveIcon from "./assets/Icons/ic_leave.svg";
-import passwordIcon from "./assets/Icons/ic_password.svg";
-import eventIcon from "./assets/Icons/ic_event.svg";
-import logoutIcon from "./assets/Icons/ic_logout.svg";
-import examFormIcon from "./assets/images/examForm.png"
+import playQuizIcon from "../assets/Icons/ic_quiz.svg";
+import assignmentIcon from "../assets/Icons/ic_assignment.svg";
+import holidayIcon from "../assets/Icons/ic_holiday.svg";
+import calenderIcon from "../assets/Icons/ic_calendra.svg";
+import resultIcon from "../assets/Icons/ic_results.svg";
+import dateSheetIcon from "../assets/Icons/ic_date_sheet.svg";
+import doubtsIcon from "../assets/Icons/ic_doubts.svg";
+import galleryIcon from "../assets/Icons/ic_gallery.svg";
+import leaveIcon from "../assets/Icons/ic_leave.svg";
+import passwordIcon from "../assets/Icons/ic_password.svg";
+import eventIcon from "../assets/Icons/ic_event.svg";
+import logoutIcon from "../assets/Icons/ic_logout.svg";
+import examFormIcon from "../assets/images/examForm.png"
 import { useState } from "react";
 const cardItem = [
   {
@@ -81,22 +81,22 @@ const Dashboard = () => {
   const [session, setSession] = useState("2023-24");
   return (
     <>
-      <div className="main-dashboard-container">
-        <div className="dashboard-container">
-          <div className="dashboard-header">
-            <div className="info">
-              <span className="user-name">{name}</span>
-              <span className="detail">{`Course : ${course}`}</span>
-              <span className="detail">{`Section : ${section}`}</span>
-              <span className="detail">{`Roll No. : ${rollNo}`}</span>
-              <span className="session">{session}</span>
+      <div className={DashboardCSS.mainDashboardContainer}>
+        <div className={DashboardCSS.dashboardContainer}>
+          <div className={DashboardCSS.dashboardHeader}>
+            <div className={DashboardCSS.info}>
+              <span className={DashboardCSS.userName}>{name}</span>
+              <span className={DashboardCSS.detail}>{`Course : ${course}`}</span>
+              <span className={DashboardCSS.detail}>{`Section : ${section}`}</span>
+              <span className={DashboardCSS.detail}>{`Roll No. : ${rollNo}`}</span>
+              <span className={DashboardCSS.session}>{session}</span>
             </div>
-            <div className="photo">
+            <div className={DashboardCSS.photo}>
               <img src={''} alt="Profile Image" />
             </div>
           </div>
-          <div className="background-curve">
-            <div className="main-card-container">
+          <div className={DashboardCSS.backgroundCurve}>
+            <div className={DashboardCSS.mainCardContainer}>
               <MainCard
                 icon={attendanceIcon}
                 tittle={"Attendance"}
@@ -108,7 +108,7 @@ const Dashboard = () => {
                 content={`₹${64000}`}
               />
             </div>
-            <div className="card-container">
+            <div className={DashboardCSS.cardContainer}>
               {cardItem.map((ele) => {
                 return <Card icon={ele.icon} tittle={ele.name} />;
               })}

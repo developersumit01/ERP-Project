@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Calender.css";
+import CalenderCSS from"../CSS/Calender.module.css";
 const Calender = () => {
   const year = ["2023", "2024"];
   const months = [
@@ -49,44 +49,44 @@ const Calender = () => {
     );
   };
   return (
-    <div className="calender-container">
-      <div className="header">
+    <div className={CalenderCSS.calenderContainer}>
+      <div className={CalenderCSS.header}>
         <select
           name="month"
           value={currentMonth}
           onChange={handleChange}
-          className="select-option">
+          className={CalenderCSS.selectOption}>
           {makeOptions(months)}
         </select>
         <select
           name="year"
           value={currentYear}
           onChange={handleChange}
-          className="select-option">
+          className={CalenderCSS.selectOption}>
           {makeOptions(year)}
         </select>
       </div>
-      <div className="weak-days">
+      <div className={CalenderCSS.weakDays}>
         {days.map((ele) => {
-          return <div className="day">{ele}</div>;
+          return <div className={CalenderCSS.day}>{ele}</div>;
         })}
       </div>
-      <div className="dates">
+      <div className={CalenderCSS.dates}>
         {temp.map((ele, index) => {
           return (
             <>
               {date <= numberOfDays ? (
                 <div
                   tabIndex={ele}
-                  className={`date ${
+                  className={`${CalenderCSS.dates} ${
                     ele >= dayOfFirstDay && date <= numberOfDays
-                      ? `date-number ${
-                          ele % 7 == 0 || ele % 7 == 6 ? "color-red" : ""
+                      ? `${CalenderCSS.dateNumber} ${
+                          ele % 7 == 0 || ele % 7 == 6 ? CalenderCSS.colorRed : ""
                         } ${
                           date == todayDate &&
                           todayMonth == months.indexOf(currentMonth) + 1 &&
                           todayYear == currentYear
-                            ? "today-date"
+                            ? CalenderCSS.todayDate
                             : ""
                         }`
                       : ""

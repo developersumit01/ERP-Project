@@ -1,4 +1,4 @@
-.main-background-container {
+.mainBackgroundContainer {
     width: 100%;
     min-height: 100dvh;
     display: flex;
@@ -6,14 +6,14 @@
     justify-content: center;
     background: linear-gradient(#345fb4, #bc91e5);
   }
-.background-curve{
+.backgroundCurve{
   display: flex;
   align-items: center;
   justify-content: center;
   /* min-height: 90dvh; */
   z-index: 2;
 }
-.background-container {
+.backgroundContainer {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr;
@@ -26,17 +26,17 @@
     /* background-color: #345FB4; */
     background-color: transparent;
   }
-  .background-header {
+  .backgroundHeader {
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
     flex-wrap: wrap-reverse;
     padding: 0 20px 0 20px;
   }
-  .for-mobile{
+  .forMobile{
     display: none;
   }
-  .bottum-image{
+  .buttonImage{
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -44,15 +44,15 @@
     opacity: .2;
   }
   @media (width<700px) {
-    .background-container {
+    .backgroundContainer {
       width: 100%;
     }
-    .card-container {
+    .cardContainer {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   @media (width<400px) {
-    .arrow,.middle-button,.right-button{
+    .arrow,.middleButton,.rightButton{
       display: none;
     }
     .header {
@@ -60,16 +60,16 @@
       justify-content: center;
       flex-direction: column-reverse;
     }
-    .for-mobile{
+    .forMobile{
       display: unset;
       width: 100%;
     }
-    .upper-button{
+    .upperButton{
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .mobile-middle-button{
+    .mobileMiddleButton{
       display: flex;
       align-items: center;
       justify-content: center;

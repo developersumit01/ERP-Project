@@ -1,4 +1,4 @@
-.calender-container {
+.calenderContainer {
   width: 100%;
   /* background-color: aqua; */
   display: flex;
@@ -8,7 +8,7 @@
   height: 100%;
   flex-direction: column;
 }
-.weak-days {
+.weakDays {
   width: 300px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -31,7 +31,7 @@
   height: 30px;
   width: 30px;
 }
-.date-number {
+.dateNumber {
   cursor: pointer;
   /* border: 1px solid black; */
   display: flex;
@@ -47,7 +47,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.select-option {
+.selectOption {
   width: 10rem;
   text-align: center;
   font-size: 1em;
@@ -60,18 +60,18 @@
   border-radius: 5px; */
 }
 
-.color-red {
+.colorRed {
   background-color: #fa5151;
 }
-.today-date {
+.todayDate {
   background-color: #6c6cff;
 }
-.date-number:focus {
+.dateNumber:focus {
   background-color: #65ffde;
 }
 @media (width<350px) {
   .dates,
-  .weak-days {
+  .weakDays {
     width: 100%;
   }
   .date {

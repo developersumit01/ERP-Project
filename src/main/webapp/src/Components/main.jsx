@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client'
 // import Calender from './Calneder'
 import Dashboard from './Dashboard'
 import MyProfile from './MyProfile'
-import './index.css'
 import Background from './Backgroung'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -10,7 +10,7 @@
     justify-content: center;
     cursor: pointer;
 }
-.inner-card{
+.innerCard{
     position: relative;
     display: flex;
     justify-content: space-evenly;
@@ -23,10 +23,10 @@
     width: 10rem;
     height: 9rem;
 }
-.inner-card img{
+.innerCard img{
     filter: drop-shadow(10px 2px 4px #231e1ec9);
 }
-.inner-card:hover{
+.innerCard:hover{
     scale: 1.1;
     background-color: #aeb0bd;
     color: #fff;
@@ -34,7 +34,7 @@
     transition: .5s ease-in-out;
 }
 @media (width<370px) {
-    .inner-card {
+    .innerCard {
       width: 70%;
     }
   }

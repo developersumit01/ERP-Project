@@ -1,5 +1,5 @@
-import "./Background.css";
-import bottumImage from './assets/images/bottumImage.svg'
+import BackgroundCSS from"../CSS/Background.module.css";
+import bottumImage from '../assets/images/bottumImage.svg';
 import MyProfile from "./MyProfile";
 import Calender from './Calender';
 const acadmicInfo=[
@@ -32,32 +32,32 @@ const personalData = [
 const Background = () => {
   return (
     <>
-      <div className="main-background-container">
-        <div className="background-container">
-          <div className="background-header">
-            <div className="arrow">{"<"}</div>
-            <div className="middle-button">
+      <div className={BackgroundCSS.mainBackgroundContainer}>
+        <div className={BackgroundCSS.backgroundContainer}>
+          <div className={BackgroundCSS.backgroundHeader}>
+            <div className={BackgroundCSS.arrow}>{"<"}</div>
+            <div className={BackgroundCSS.middleButton}>
               <span>Attandance</span>
               <span>Holidays</span>
             </div>
-            <div className="right-button">Done</div>
-            <div className="for-mobile">
-              <div className="upper-button">
-                <div className="mobile-arrow">{"<"}</div>
-                <div className="mobile-right-button">Done</div>
+            <div className={BackgroundCSS.rightButton}>Done</div>
+            <div className={BackgroundCSS.forMobile}>
+              <div className={BackgroundCSS.upperButton}>
+                <div className={BackgroundCSS.mobileArrow}>{"<"}</div>
+                <div className={BackgroundCSS.mobileRightButton}>Done</div>
               </div>
-              <div className="mobile-middle-button">
+              <div className={BackgroundCSS.mobileMiddleButton}>
                 <span>Attandance</span>
                 <span>Holidays</span>
               </div>
             </div>
           </div>
 
-          <div className="background-curve">
+          <div className={BackgroundCSS.backgroundCurve}>
             <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} />
             {/* <Calender /> */}
           </div>
-          <img src={bottumImage} alt="" className="bottum-image" />
+          <img src={bottumImage} alt="" className={BackgroundCSS.buttonImage} />
         </div>
       </div>
     </>

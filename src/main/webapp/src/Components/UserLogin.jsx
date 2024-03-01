@@ -1,9 +1,9 @@
-import appLogo from "./assets/images/Logo.svg";
-import loginIcon from "./assets/images/login-icon.png";
-import rightArrow from "./assets/images/right.svg";
-import backgroundImage from "./assets/images/university-image.jpg";
-import "./App.css";
-import "./index.css";
+import appLogo from "../assets/images/Logo.svg";
+import loginIcon from "../assets/images/login-icon.png";
+import rightArrow from "../assets/images/right.svg";
+import backgroundImage from "../assets/images/university-image.jpg";
+import AppCSS from "../CSS/App.mofule.css";
+import IndexCSS from "../CSS/index.module.css";
 import { useState } from "react";
 import AdminLogin from "./AdminLogin";
 
@@ -24,7 +24,7 @@ function UserLogin() {
     // setCardAnimation("card-animation");
     setCardAnimation((prev) => ({
       ...prev,
-      [name[0]]: "card-animation",
+      [name[0]]: IndexCSS.cardAnimation,
     }));
     setTimeout(() => {
       removeCardAnimation(name);
@@ -38,58 +38,58 @@ function UserLogin() {
     setDisplayCard(arr[1]);
     setScaleAnimation((prev) => ({
       ...prev,
-      [arr[1]]: "scale-animation",
+      [arr[1]]: IndexCSS.scaleAnimation,
     }));
   };
 
   return (
     <>
-      <main className="main">
+      <main className={AppCSS.main}>
         <div
-          className="background"
+          className={AppCSS.background}
           style={{ backgroundImage: `url(${backgroundImage})` }}></div>
         {displayCard == "loginContainer" ? (
           <div
-            className={`login-container ${cardAnimation.loginContainer} ${scaleAnimation.loginContainer}`}
+            className={`${AppCSS.loginContainer} ${cardAnimation.loginContainer} ${scaleAnimation.loginContainer}`}
             name="loginContainer">
-            <div className="logo">
+            <div className={AppCSS.logo}>
               <img src={appLogo} alt="" />
             </div>
-            <div className="login-icon">
+            <div className={AppCSS.loginIcon}>
               <img src={loginIcon} alt="" />
               <label>User Login</label>
             </div>
-            <div className="email-box">
+            <div className={AppCSS.emailBox}>
               <input
                 type="text"
                 id="rollNo"
                 placeholder="Roll No"
                 autocomplete="off"
               />
-              <span className="border-animation"></span>
+              <span className={AppCSS.borderAnimation}></span>
             </div>
-            <div className="password-box">
+            <div className={AppCSS.passwordBox}>
               <input
                 type="password"
                 id="password"
                 placeholder="Password"
                 value={""}
               />
-              <span className="border-animation"></span>
+              <span className={AppCSS.borderAnimation}></span>
             </div>
-            <div className="submit-box">
+            <div className={AppCSS.submitBox}>
               <input type="submit" value="Login" />
               <img src={rightArrow} alt="" />
             </div>
-            <div className="forget-password-admin">
+            <div className={AppCSS.forgetPasswordAdmin}>
               <a
-              className="link"
+              className={AppCSS.link}
                 onClick={setAnimation}
                 name="loginContainer_forgetPasswordContainer">
                 forget password
               </a>
               <a
-              className="link"
+              className={AppCSS.link}
                 name="loginContainer_adminLoginContainer"
                 onClick={setAnimation}>
                 admin login
@@ -100,40 +100,40 @@ function UserLogin() {
           <AdminLogin cardAnimation={cardAnimation} scaleAnimation={scaleAnimation} setAnimation={setAnimation}/>
         ) : (
           <div
-            className={`login-container ${cardAnimation.forgetPasswordContainer} ${scaleAnimation.forgetPasswordContainer}`}
+            className={`${AppCSS.loginContainer} ${cardAnimation.forgetPasswordContainer} ${scaleAnimation.forgetPasswordContainer}`}
             name="forgetPasswordContainer">
-            <div class="logo">
+            <div className={AppCSS.logo}>
               <img src={appLogo} alt="" />
             </div>
-            <div class="login-icon">
+            <div className={AppCSS.loginIcon}>
               <img src={loginIcon} alt="" />
               <label>Forget Password</label>
             </div>
-            <div class="email-box">
+            <div className={AppCSS.emailBox}>
               <input
                 type="text"
                 id="rollNo"
                 placeholder="Roll No"
                 autocomplete="off"
               />
-              <span class="border-animation"></span>
+              <span className={AppCSS.borderAnimation}></span>
             </div>
             {/* <!-- This will display in frist click --> */}
-            {/* <!-- <div class="password-box">
+            {/* <!-- <div className="password-box">
                 <input type="text" id="otp" placeholder="Enter OTP" autocomplete="off">
-                <span class="border-animation"></span>
+                <span className="border-animation"></span>
             </div> --> */}
             {/* <!-- This will display in second click --> */}
-            {/* <!-- <div class="email-box">
+            {/* <!-- <div className="email-box">
                 <input type="text" id="password" placeholder="Password">
-                <span class="border-animation"></span>
+                <span className="border-animation"></span>
             </div>
-            <div class="password-box">
+            <div className="password-box">
                 <input type="text" id="comfirm password" placeholder="Comfirm Password">
-                <span class="border-animation"></span>
+                <span className="border-animation"></span>
             </div> --> */}
             {/* <!-- In third click all process will complete --> */}
-            <div class="submit-box">
+            <div className={AppCSS.submitBox}>
               {/* <!-- 
                     first click -> send OTP
                     second click -> verify OTP
@@ -146,15 +146,15 @@ function UserLogin() {
                 alt=""
               />
             </div>
-            <div className="forget-password-admin">
+            <div className={AppCSS.forgetPasswordAdmin}>
               <a
-              className="link"
+              className={AppCSS.link}
                 onClick={setAnimation}
                 name="forgetPasswordContainer_loginContainer">
                 user login
               </a>
               <a
-              className="link"
+              className={AppCSS.link}
                 onClick={setAnimation}
                 name="forgetPasswordContainer_adminLoginContainer">
                 admin login

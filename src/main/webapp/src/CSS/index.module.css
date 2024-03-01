@@ -1,7 +1,7 @@
-.display-none{
+.displayNone{
   display: none;
 }
-.scale-animation{
+.scaleAnimation{
   animation-name: scale;
   animation-duration: 1s;
   transition: .4s;
@@ -14,7 +14,7 @@
     scale: 1;
   }
 }
-.card-animation{
+.cardAnimation{
   animation-name: card;
   animation-duration: 2.3s;
   transition: .4s;

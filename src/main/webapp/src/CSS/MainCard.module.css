@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.main-card{
+.mainCard{
     background-color: #fff;
     min-width: 10rem;
     min-height: 11rem;
@@ -15,7 +15,7 @@
     cursor: pointer;
   box-shadow: 7px 5px 20px 3px #231e1ec9;
 }
-.main-card img{
+.mainCard img{
     filter: drop-shadow(10px 2px 5px #231e1ec9);
 }
 .contant{
@@ -26,7 +26,7 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
-.main-card:hover{
+.mainCard:hover{
     scale: 1.1;
     background-color: #aeb0bd;
     color: #fff;
@@ -34,7 +34,7 @@
     transition: .5s ease-in-out;
 }
 @media (width<350px) {
-    .main-card {
+    .mainCard {
       width: 75%;
     }
   }
