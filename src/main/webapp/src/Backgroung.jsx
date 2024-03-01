@@ -1,5 +1,6 @@
 import "./Background.css";
-// import MyProfile from "./MyProfile";
+import bottumImage from './assets/images/bottumImage.svg'
+import MyProfile from "./MyProfile";
 import Calender from './Calender';
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
@@ -53,9 +54,10 @@ const Background = () => {
           </div>
 
           <div className="background-curve">
-            {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
-            <Calender />
+            <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} />
+            {/* <Calender /> */}
           </div>
+          <img src={bottumImage} alt="" className="bottum-image" />
         </div>
       </div>
     </>

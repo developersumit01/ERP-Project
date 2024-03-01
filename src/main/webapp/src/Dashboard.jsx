@@ -17,6 +17,7 @@ import leaveIcon from "./assets/Icons/ic_leave.svg";
 import passwordIcon from "./assets/Icons/ic_password.svg";
 import eventIcon from "./assets/Icons/ic_event.svg";
 import logoutIcon from "./assets/Icons/ic_logout.svg";
+import examFormIcon from "./assets/images/examForm.png"
 import { useState } from "react";
 const cardItem = [
   {
@@ -56,6 +57,10 @@ const cardItem = [
     icon: leaveIcon,
   },
   {
+    name: "Exam Form",
+    icon: examFormIcon,
+  },
+  {
     name: "Change Password",
     icon: passwordIcon,
   },
@@ -78,7 +83,7 @@ const Dashboard = () => {
     <>
       <div className="main-dashboard-container">
         <div className="dashboard-container">
-          <div className="header">
+          <div className="dashboard-header">
             <div className="info">
               <span className="user-name">{name}</span>
               <span className="detail">{`Course : ${course}`}</span>
