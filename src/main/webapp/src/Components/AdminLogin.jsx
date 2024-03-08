@@ -1,6 +1,7 @@
 import appLogo from "../assets/images/Logo.svg";
 import rightArrow from "../assets/images/right.svg";
 import adminLoginIcon from "../assets/images/adminLoginIcon.png";
+import AppCSS from "../CSS/App.module.css";
 const AdminLogin = ({ cardAnimation, scaleAnimation, setAnimation }) => {
   return (
     <>

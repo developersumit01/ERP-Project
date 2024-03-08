@@ -2,7 +2,7 @@ import appLogo from "../assets/images/Logo.svg";
 import loginIcon from "../assets/images/login-icon.png";
 import rightArrow from "../assets/images/right.svg";
 import backgroundImage from "../assets/images/university-image.jpg";
-import AppCSS from "../CSS/App.mofule.css";
+import AppCSS from "../CSS/App.module.css";
 import IndexCSS from "../CSS/index.module.css";
 import { useState } from "react";
 import AdminLogin from "./AdminLogin";

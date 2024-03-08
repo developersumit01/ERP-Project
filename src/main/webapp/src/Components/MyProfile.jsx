@@ -1,5 +1,6 @@
 import InputField from "./InputField";
 import MyProfileCSS from "../CSS/MyProfile.module.css";
+import DashboardCSS from "../CSS/Dashboard.module.css";
 const MyProfile = ({ acadmicInfo, personalData }) => {
   return (
     <>
@@ -15,7 +16,7 @@ const MyProfile = ({ acadmicInfo, personalData }) => {
               />
             );
           })}
-          </div><div className={MyProfileCSS.photo}>
+          </div><div className={DashboardCSS.photo}>
               <img src={''} alt="Profile Image" />
             </div>
         </div>

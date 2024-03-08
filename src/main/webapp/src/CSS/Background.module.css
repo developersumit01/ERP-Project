@@ -1,77 +1,98 @@
 .mainBackgroundContainer {
-    width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(#345fb4, #bc91e5);
-  }
-.backgroundCurve{
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#345fb4, #bc91e5);
+}
+.backgroundCurve {
   display: flex;
   align-items: center;
   justify-content: center;
   /* min-height: 90dvh; */
-  z-index: 2;
+  /* z-index: 2; */
 }
 .backgroundContainer {
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px auto;
-    /* display: flex; */
-    min-height: 100dvh;
-    /* flex-direction: column; */
-    gap: 25px;
-    /* margin-bottom: 20px; */
-    /* background-color: #345FB4; */
-    background-color: transparent;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto;
+  /* display: flex; */
+  min-height: 100dvh;
+  /* flex-direction: column; */
+  gap: 25px;
+  /* margin-bottom: 20px; */
+  /* background-color: #345FB4; */
+  background-color: transparent;
+}
+.backgroundHeader {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  padding: 0 20px 0 20px;
+}
+.forMobile {
+  display: none;
+}
+.buttonImage {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+}
+.middleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middleButton label {
+  font-size: 1.2rem;
+  background-color: aqua;
+  height: 1.5rem;
+  width: 7.5rem;
+  text-align: center;
+  border-radius: 10px;
+}
+.radioButton:checked ~ .lableR,.radioButton:checked ~ .lableL {
+  background-color: #fff;
+}
+.radioButton {
+  display: none;
+}
+@media (width<700px) {
+  .backgroundContainer {
+    width: 100%;
   }
-  .backgroundHeader {
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
-    padding: 0 20px 0 20px;
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .forMobile{
+}
+@media (width<400px) {
+  .arrow,
+  .middleButton,
+  .rightButton {
     display: none;
   }
-  .buttonImage{
+  .header {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .forMobile {
+    display: unset;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    opacity: .2;
   }
-  @media (width<700px) {
-    .backgroundContainer {
-      width: 100%;
-    }
-    .cardContainer {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .upperButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  @media (width<400px) {
-    .arrow,.middleButton,.rightButton{
-      display: none;
-    }
-    .header {
-      align-items: center;
-      justify-content: center;
-      flex-direction: column-reverse;
-    }
-    .forMobile{
-      display: unset;
-      width: 100%;
-    }
-    .upperButton{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .mobileMiddleButton{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .mobileMiddleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+}

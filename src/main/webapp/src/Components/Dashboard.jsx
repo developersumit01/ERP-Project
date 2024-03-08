@@ -77,7 +77,7 @@ const Dashboard = () => {
   const [name, setName] = useState("SUMIT KUMAR");
   const [course, setCourse] = useState("B. Tech. IT");
   const [section, setSection] = useState("3C");
-  const [rollNo, setRollNo] = useState("2101280130003");
+  const [rollNo, setRollNo] = useState("2101280130002");
   const [session, setSession] = useState("2023-24");
   return (
     <>

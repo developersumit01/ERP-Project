@@ -24,7 +24,7 @@ const Calender = () => {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(
-    months[new Date(`February 21, ${currentYear}`).getMonth()]
+    months[new Date().getMonth()]
   );
   const dayOfFirstDay = new Date(`${currentMonth} 1, ${currentYear}`).getDay();
   const numberOfDays = new Date(
@@ -48,6 +48,7 @@ const Calender = () => {
       </>
     );
   };
+  console.log(todayDate);
   return (
     <div className={CalenderCSS.calenderContainer}>
       <div className={CalenderCSS.header}>
@@ -78,13 +79,13 @@ const Calender = () => {
               {date <= numberOfDays ? (
                 <div
                   tabIndex={ele}
-                  className={`${CalenderCSS.dates} ${
+                  className={`${
                     ele >= dayOfFirstDay && date <= numberOfDays
                       ? `${CalenderCSS.dateNumber} ${
                           ele % 7 == 0 || ele % 7 == 6 ? CalenderCSS.colorRed : ""
                         } ${
                           date == todayDate &&
-                          todayMonth == months.indexOf(currentMonth) + 1 &&
+                          todayMonth == months.indexOf(currentMonth)  &&
                           todayYear == currentYear
                             ? CalenderCSS.todayDate
                             : ""
