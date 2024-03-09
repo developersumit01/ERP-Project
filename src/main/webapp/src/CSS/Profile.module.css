@@ -1,0 +1,43 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+.acadmicInfo{
+      width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 160px;
+      flex-wrap: wrap-reverse;
+      /* row-gap: 15px; */
+}
+.acadmicData{
+      display: grid;
+      row-gap: 15px;
+}
+.myProfileContainer{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+}
+.personalInfo{
+      width: 90%;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 15px;
+
+}
+@media (width<1200px) {
+      .acadmicInfo{
+            display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+      }
+      .acadmicData{
+            width: 100%;
+      }
+}
