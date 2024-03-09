@@ -1,8 +1,7 @@
 import BackgroundCSS from"../CSS/Background.module.css";
 import bottumImage from '../assets/images/bottumImage.svg';
-import backIcon from '../assets/Icons/ic_back.svg';
 import MyProfile from "./MyProfile";
-import Calender from './Calender';
+
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
   { name: "Roll No.", value: "2101280130002", editable: false },
@@ -36,21 +35,15 @@ const Background = () => {
       <div className={BackgroundCSS.mainBackgroundContainer}>
         <div className={BackgroundCSS.backgroundContainer}>
           <div className={BackgroundCSS.backgroundHeader}>
-            <div className={BackgroundCSS.arrow}>
-              <img src={backIcon} alt="" />
-            </div>
+            <div className={BackgroundCSS.arrow}>{"<"}</div>
             <div className={BackgroundCSS.middleButton}>
-              <input type="radio" id="Attandance" name="select" className={BackgroundCSS.radioButton} />
-              <label htmlFor="Attandance" className={BackgroundCSS.lableR}>Attandance</label>
-              <input type="radio" id="Holidays" name="select" className={BackgroundCSS.radioButton} />
-              <label htmlFor="Holidays" className={BackgroundCSS.lableL} >Holidays</label>
+              <span>Attandance</span>
+              <span>Holidays</span>
             </div>
             <div className={BackgroundCSS.rightButton}>Done</div>
             <div className={BackgroundCSS.forMobile}>
               <div className={BackgroundCSS.upperButton}>
-                <div className={BackgroundCSS.mobileArrow}>
-                  <img src={backIcon} alt="" />
-                </div>
+                <div className={BackgroundCSS.mobileArrow}>{"<"}</div>
                 <div className={BackgroundCSS.mobileRightButton}>Done</div>
               </div>
               <div className={BackgroundCSS.mobileMiddleButton}>
