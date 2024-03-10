@@ -55,7 +55,7 @@
 
 .loginContainer,.forgetPasswordContainer,.adminContainer{
   position:absolute;
-  height: 33rem; 
+  height: 80dvh; 
   width: 20rem;
   background-color: #a7a7f9bf;
   border-radius: 20px;
@@ -175,7 +175,7 @@
 @media (width>1500px) {
   
   .loginContainer,.forgetPasswordContainer,.adminContainer{
-    height: 60rem;
+    height: 80dvh;
     width: 40rem;
   }
   .emailBox input,.passwordBox input,.loginIcon label{

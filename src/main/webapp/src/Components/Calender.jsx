@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CalenderCSS from"../CSS/Calender.module.css";
+import CalenderCSS from "../CSS/Calender.module.css";
 const Calender = () => {
   const year = ["2023", "2024"];
   const months = [
@@ -82,10 +82,12 @@ const Calender = () => {
                   className={`${
                     ele >= dayOfFirstDay && date <= numberOfDays
                       ? `${CalenderCSS.dateNumber} ${
-                          ele % 7 == 0 || ele % 7 == 6 ? CalenderCSS.colorRed : ""
+                          ele % 7 == 0 || ele % 7 == 6
+                            ? CalenderCSS.colorRed
+                            : ""
                         } ${
                           date == todayDate &&
-                          todayMonth == months.indexOf(currentMonth)  &&
+                          todayMonth == months.indexOf(currentMonth) &&
                           todayYear == currentYear
                             ? CalenderCSS.todayDate
                             : ""
