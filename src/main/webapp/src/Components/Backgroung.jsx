@@ -4,11 +4,11 @@ import MyProfile from "./MyProfile";
 
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
-  { name: "Roll No.", value: "2101280130002", editable: false },
+  { name: "Roll No.", value: "XXXXXXXXXXXXX", editable: false },
   { name: "Father Name", value: "Hariprasad", editable: false },
   { name: "Mother Name", value: "Phool Kumari", editable: false },
   { name: "Gender", value: "Male", editable: false },
-  { name: "D.O.B.", value: "18/02/2004", editable: false },
+  { name: "D.O.B.", value: "dd-mm-yyyy", editable: false },
   { name: "Course", value: "Bechlor of Technology", editable: false },
   { name: "Branch", value: "Information Technology", editable: false },
 ]

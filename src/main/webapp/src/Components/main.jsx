@@ -5,11 +5,10 @@ import UserLogin from './UserLogin.jsx'
 import Dashboard from './Dashboard'
 import MyProfile from './MyProfile'
 import Background from './Backgroung'
+import App from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Dashboard /> */}
-    <Background />
-    {/* <UserLogin /> */}
+    <App />
   </React.StrictMode>,
 )
