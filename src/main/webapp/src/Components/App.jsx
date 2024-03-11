@@ -2,21 +2,25 @@ import Dashboard from "./Dashboard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Background from "./Backgroung";
 import UserLogin from "./UserLogin";
+import ForgetPassword from "./ForgetPassword";
+import AdminLogin from "./AdminLogin";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UserLogin />,
-    children:[
-      {
-            path:"/",
-            element:<Dashboard />
-      }
-    ]
+    element: <AdminLogin />,
   },
   {
-    path: "/background",
-    element: <Background />,
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/admin",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/forget password",
+    element: <ForgetPassword />,
   },
 ]);
 const App = () => {

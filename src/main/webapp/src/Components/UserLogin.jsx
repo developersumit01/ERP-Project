@@ -4,7 +4,7 @@ import rightArrow from "../assets/images/right.svg";
 import backgroundImage from "../assets/images/university-image.jpg";
 import AppCSS from "../CSS/App.module.css";
 import { useState } from "react";
-import AdminLogin from "./AdminLogin";
+import { Outlet } from "react-router-dom";
 
 function UserLogin() {
   const [loginData, setLoginData] = useState({
@@ -24,6 +24,7 @@ function UserLogin() {
           className={AppCSS.background}
           style={{ backgroundImage: `url(${backgroundImage})` }}></div>
         (
+          <Outlet />
         <div className={`${AppCSS.loginContainer}`} name="loginContainer">
           <div className={AppCSS.logo}>
             <img src={appLogo} alt="" />
