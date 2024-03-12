@@ -20,7 +20,7 @@ const AdminLogin = ({appLogo}) => {
   // console.log(appLogo);
   return (
     <>
-      <div className={`${AppCSS.loginContainer}`} name="loginContainer">
+      <div className={`${AppCSS.loginContainer}`}>
         <div className={AppCSS.logo}>
           <img src={appLogo} alt="" />
         </div>

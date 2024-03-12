@@ -1,4 +1,5 @@
 import DashboardCSS from "../CSS/Dashboard.module.css";
+import CardCSS from '../CSS/Card.module.css';
 import profileImage from "../assets/images/profile.jpg";
 import attendanceIcon from "../assets/Icons/ic_attendance.svg";
 import feesDueIcon from "../assets/Icons/ic_fees_due.svg";
@@ -19,6 +20,7 @@ import eventIcon from "../assets/Icons/ic_event.svg";
 import logoutIcon from "../assets/Icons/ic_logout.svg";
 import examFormIcon from "../assets/images/examForm.png"
 import { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 const cardItem = [
   {
     name: "Play Quiz",
@@ -81,14 +83,17 @@ const Dashboard = () => {
   const [session, setSession] = useState("2023-24");
   return (
     <>
-      <div className={DashboardCSS.mainDashboardContainer}>
+    <Outlet />
+    <div className={DashboardCSS.mainDashboardContainer}>
         <div className={DashboardCSS.dashboardContainer}>
           <div className={DashboardCSS.dashboardHeader}>
-            <div className={DashboardCSS.info}>
+            <div className={`${DashboardCSS.info}`}>
+            <Link to={'/profile'} className={`${CardCSS.link} ${DashboardCSS.info}`}>
               <span className={DashboardCSS.userName}>{name}</span>
               <span className={DashboardCSS.detail}>{`Course : ${course}`}</span>
               <span className={DashboardCSS.detail}>{`Section : ${section}`}</span>
               <span className={DashboardCSS.detail}>{`Roll No. : ${rollNo}`}</span>
+            </Link>
               <span className={DashboardCSS.session}>{session}</span>
             </div>
             <div className={DashboardCSS.photo}>
@@ -116,6 +121,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };
