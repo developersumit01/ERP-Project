@@ -4,9 +4,11 @@ import rightArrow from "../assets/images/right.svg";
 import backgroundImage from "../assets/images/university-image.jpg";
 import AppCSS from "../CSS/App.module.css";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 
 function UserLogin() {
+  const outletContext=useOutletContext();
+  console.log(outletContext);
   const [loginData, setLoginData] = useState({
     userId: "",
     password: "",

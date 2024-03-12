@@ -1,9 +1,10 @@
-import appLogo from "../assets/images/Logo.svg";
-// import rightArrow from "../assets/images/right.svg";
-// import adminLoginIcon from "../assets/images/adminLoginIcon.png";
+
+import rightArrow from "../assets/images/right.svg";
+import adminLoginIcon from "../assets/images/adminLoginIcon.png";
 import AppCSS from "../CSS/App.module.css";
 import { useState } from "react";
-const AdminLogin = () => {
+import useImages from "../hooks/useImages";
+const AdminLogin = ({appLogo}) => {
   const [adminData, setAdminData] = useState({
     userId: "",
     password: "",
@@ -14,15 +15,17 @@ const AdminLogin = () => {
       [event.target.name]: event.target.value,
     }));
   };
+  const imageURL=useImages();
   console.log(appLogo);
+  // console.log(appLogo);
   return (
     <>
       <div className={`${AppCSS.loginContainer}`} name="loginContainer">
         <div className={AppCSS.logo}>
-          <img src="./assets/images/Logo.svg" alt="" />
+          <img src={appLogo} alt="" />
         </div>
         <div className={AppCSS.loginIcon}>
-          <img src="./assets/images/adminLoginIcon.png" alt="" />
+          <img src={adminLoginIcon} alt="" />
           <label>Admin Login</label>
         </div>
         <div className={AppCSS.emailBox}>
@@ -30,7 +33,7 @@ const AdminLogin = () => {
             type="text"
             name="userId"
             placeholder="userId"
-            autocomplete="off"
+            autoComplete="off"
             value={adminData.userId}
             onChange={handleChange}
           />
@@ -48,7 +51,7 @@ const AdminLogin = () => {
         </div>
         <div className={AppCSS.submitBox}>
           <input type="submit" value="Login" />
-          <img src="./assets/images/right.svg" alt="" />
+          <img src="assets/images/right.svg" alt="" />
         </div>
         <div className={AppCSS.forgetPasswordAdmin}>
           <a

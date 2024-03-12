@@ -8,19 +8,21 @@ import AdminLogin from "./AdminLogin";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AdminLogin />,
+    element: <UserLogin />,
+    children:[
+      {
+        path: "/admin",
+        element: <AdminLogin />,
+      },
+      {
+        path: "/forget password",
+        element: <ForgetPassword />,
+      },
+    ]
   },
   {
     path: "/dashboard",
     element: <Dashboard />,
-  },
-  {
-    path: "/admin",
-    element: <AdminLogin />,
-  },
-  {
-    path: "/forget password",
-    element: <ForgetPassword />,
   },
 ]);
 const App = () => {
