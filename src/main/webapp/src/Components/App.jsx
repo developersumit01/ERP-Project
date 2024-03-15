@@ -1,28 +1,48 @@
-import Dashboard from "./Dashboard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Background from "./Backgroung";
 import UserLogin from "./UserLogin";
-import ForgetPassword from "./ForgetPassword";
-import AdminLogin from "./AdminLogin";
+import React, { Suspense } from "react";
+import Loading from "./Loading";
+const Background = React.lazy(() => import("./Backgroung"));
+const Dashboard = React.lazy(() => import("./Dashboard"));
+const ForgetPassword = React.lazy(() => import("./ForgetPassword"));
+const AdminLogin = React.lazy(() => import("./AdminLogin"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <UserLogin />,
-    children:[
-      {
-        path: "/admin",
-        element: <AdminLogin />,
-      },
-      {
-        path: "/forget password",
-        element: <ForgetPassword />,
-      },
-    ]
+  },
+  {
+    path: "/admin login",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <AdminLogin />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/forget password",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ForgetPassword />
+      </Suspense>
+    ),
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Dashboard />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Background />
+      </Suspense>
+    ),
   },
 ]);
 const App = () => {

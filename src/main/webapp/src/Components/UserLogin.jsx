@@ -4,10 +4,10 @@ import rightArrow from "../assets/images/right.svg";
 import backgroundImage from "../assets/images/university-image.jpg";
 import AppCSS from "../CSS/App.module.css";
 import { useState } from "react";
-import { Outlet, useOutletContext } from "react-router-dom";
+import { Link, Outlet, useOutletContext } from "react-router-dom";
 
 function UserLogin() {
-  const outletContext=useOutletContext();
+  const outletContext = useOutletContext();
   console.log(outletContext);
   const [loginData, setLoginData] = useState({
     userId: "",
@@ -25,8 +25,6 @@ function UserLogin() {
         <div
           className={AppCSS.background}
           style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-        (
-          <Outlet />
         <div className={`${AppCSS.loginContainer}`} name="loginContainer">
           <div className={AppCSS.logo}>
             <img src={appLogo} alt="" />
@@ -61,19 +59,20 @@ function UserLogin() {
             <img src={rightArrow} alt="" />
           </div>
           <div className={AppCSS.forgetPasswordAdmin}>
-            <a
+            <Link
+              to={"/forget password"}
               className={AppCSS.link}
               name="loginContainer_forgetPasswordContainer">
               forget password
-            </a>
-            <a
+            </Link>
+            <Link
+              to={"/admin login"}
               className={AppCSS.link}
               name="loginContainer_adminLoginContainer">
               admin login
-            </a>
+            </Link>
           </div>
         </div>
-        )
       </main>
     </>
   );

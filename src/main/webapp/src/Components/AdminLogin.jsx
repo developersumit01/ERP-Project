@@ -3,7 +3,9 @@ import rightArrow from "../assets/images/right.svg";
 import adminLoginIcon from "../assets/images/adminLoginIcon.png";
 import AppCSS from "../CSS/App.module.css";
 import { useState } from "react";
+import backgroundImage from "../assets/images/university-image.jpg";
 import useImages from "../hooks/useImages";
+import { Link } from "react-router-dom";
 const AdminLogin = ({appLogo}) => {
   const [adminData, setAdminData] = useState({
     userId: "",
@@ -20,6 +22,11 @@ const AdminLogin = ({appLogo}) => {
   // console.log(appLogo);
   return (
     <>
+    
+    <main className={AppCSS.main}>
+    <div
+          className={AppCSS.background}
+          style={{ backgroundImage: `url(${backgroundImage})` }}></div>
       <div className={`${AppCSS.loginContainer}`}>
         <div className={AppCSS.logo}>
           <img src={appLogo} alt="" />
@@ -54,17 +61,19 @@ const AdminLogin = ({appLogo}) => {
           <img src="assets/images/right.svg" alt="" />
         </div>
         <div className={AppCSS.forgetPasswordAdmin}>
-          <a
+          <Link
+          to={'/forget password'}
             className={AppCSS.link}
             name="adminLoginContainer_forgetPasswordContainer">
             forget password
-          </a>
-          <a className={AppCSS.link} name="adminLoginContainer_loginContainer">
+            </Link>
+          <Link to={'/'} className={AppCSS.link} name="adminLoginContainer_loginContainer">
             user login
-          </a>
+            </Link>
+          </div>
         </div>
-      </div>
-      {/* Forget password container */}
+        {/* Forget password container */}
+      </main>
     </>
   );
 };

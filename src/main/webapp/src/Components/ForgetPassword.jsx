@@ -1,10 +1,18 @@
+import { Link } from 'react-router-dom';
 import AppCSS from '../CSS/App.module.css';
 import appLogo from "../assets/images/Logo.svg";
 import loginIcon from "../assets/images/login-icon.png";
 import rightArrow from "../assets/images/right.svg";
+
+import backgroundImage from "../assets/images/university-image.jpg";
 const ForgetPassword = () => {
   return (
     <>
+    
+    <main className={AppCSS.main}>
+    <div
+          className={AppCSS.background}
+          style={{ backgroundImage: `url(${backgroundImage})` }}></div>
       <div
         className={`${AppCSS.loginContainer}`}
         name="forgetPasswordContainer">
@@ -53,18 +61,21 @@ const ForgetPassword = () => {
           />
         </div>
         <div className={AppCSS.forgetPasswordAdmin}>
-          <a
+          <Link
+          to={'/'}
             className={AppCSS.link}
             name="forgetPasswordContainer_loginContainer">
             user login
-          </a>
-          <a
+          </Link>
+          <Link
+          to={'/admin login'}
             className={AppCSS.link}
             name="forgetPasswordContainer_adminLoginContainer">
             admin login
-          </a>
+          </Link>
         </div>
       </div>
+      </main>
     </>
   );
 };

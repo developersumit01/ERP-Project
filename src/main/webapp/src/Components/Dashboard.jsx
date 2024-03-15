@@ -1,5 +1,5 @@
 import DashboardCSS from "../CSS/Dashboard.module.css";
-import CardCSS from '../CSS/Card.module.css';
+import UttilCSS from '../CSS/Uttil.module.css';
 import profileImage from "../assets/images/profile.jpg";
 import attendanceIcon from "../assets/Icons/ic_attendance.svg";
 import feesDueIcon from "../assets/Icons/ic_fees_due.svg";
@@ -88,7 +88,7 @@ const Dashboard = () => {
         <div className={DashboardCSS.dashboardContainer}>
           <div className={DashboardCSS.dashboardHeader}>
             <div className={`${DashboardCSS.info}`}>
-            <Link to={'/profile'} className={`${CardCSS.link} ${DashboardCSS.info}`}>
+            <Link to={'/profile'} className={`${UttilCSS.link} ${DashboardCSS.info}`}>
               <span className={DashboardCSS.userName}>{name}</span>
               <span className={DashboardCSS.detail}>{`Course : ${course}`}</span>
               <span className={DashboardCSS.detail}>{`Section : ${section}`}</span>
