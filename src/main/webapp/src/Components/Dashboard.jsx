@@ -1,6 +1,5 @@
 import DashboardCSS from "../CSS/Dashboard.module.css";
 import UttilCSS from '../CSS/Uttil.module.css';
-import profileImage from "../assets/images/profile.jpg";
 import attendanceIcon from "../assets/Icons/ic_attendance.svg";
 import feesDueIcon from "../assets/Icons/ic_fees_due.svg";
 import MainCard from "./MianCard.jsx";
