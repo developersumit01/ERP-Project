@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import UserLogin from "./UserLogin";
 import React, { Suspense } from "react";
 import Loading from "./Loading";
+const UserLogin = React.lazy(() => import("./UserLogin"));
 const Background = React.lazy(() => import("./Backgroung"));
 const Dashboard = React.lazy(() => import("./Dashboard"));
 const ForgetPassword = React.lazy(() => import("./ForgetPassword"));
@@ -10,7 +10,11 @@ const AdminLogin = React.lazy(() => import("./AdminLogin"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UserLogin />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <UserLogin />
+      </Suspense>
+    ),
   },
   {
     path: "/admin login",

@@ -1,4 +1,4 @@
-
+import appLogo from '../assets/images/Logo.svg'
 import rightArrow from "../assets/images/right.svg";
 import adminLoginIcon from "../assets/images/adminLoginIcon.png";
 import AppCSS from "../CSS/App.module.css";
@@ -6,7 +6,7 @@ import { useState } from "react";
 import backgroundImage from "../assets/images/university-image.jpg";
 import useImages from "../hooks/useImages";
 import { Link } from "react-router-dom";
-const AdminLogin = ({appLogo}) => {
+const AdminLogin = () => {
   const [adminData, setAdminData] = useState({
     userId: "",
     password: "",

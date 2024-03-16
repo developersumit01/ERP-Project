@@ -177,12 +177,30 @@
   
   .loginContainer,.forgetPasswordContainer,.adminContainer{
     height: 80dvh;
-    width: 40rem;
+    width: 20rem;
   }
   .emailBox input,.passwordBox input,.loginIcon label{
     font-size: 26px;
   }
   .loginIcon img,.logo img{
     height: 7rem;
+  }
+}
+@media (height<500px) {
+  .loginIcon label,.emailBox input,.passwordBox input{
+    font-size: 15px;
+  }
+  .loginIcon img{
+    width: 60%;
+  }
+  .logo{
+    display: none;
+  }
+  .emailBox input,.passwordBox input{
+    height: 1.5rem;
+  }
+  .loginContainer{
+    height: 100dvh;
+    width: 90vw;
   }
 }
