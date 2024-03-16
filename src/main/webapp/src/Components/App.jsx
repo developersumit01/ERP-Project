@@ -1,6 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { Suspense } from "react";
+// this is file is for uttility class of the css
+import utillityCSS from '../CSS/Uttil.module.css';
 import Loading from "./Loading";
+import TimeTable from "./TimeTable";
 const UserLogin = React.lazy(() => import("./UserLogin"));
 const Background = React.lazy(() => import("./Backgroung"));
 const Dashboard = React.lazy(() => import("./Dashboard"));
@@ -12,7 +15,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <Suspense fallback={<Loading />}>
-        <UserLogin />
+        <Background />
       </Suspense>
     ),
   },
@@ -39,15 +42,18 @@ const router = createBrowserRouter([
         <Dashboard />
       </Suspense>
     ),
+    children:[
+      {
+        path: ":profile",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Background />
+          </Suspense>
+        ),
+      },
+    ],
   },
-  {
-    path: "/profile",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Background />
-      </Suspense>
-    ),
-  },
+
 ]);
 const App = () => {
   return (

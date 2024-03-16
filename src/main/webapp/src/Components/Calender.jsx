@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CalenderCSS from "../CSS/Calender.module.css";
+import WeekDays from "./WeekDays";
 const Calender = () => {
   const year = ["2023", "2024"];
   const months = [
@@ -21,7 +22,6 @@ const Calender = () => {
   const todayDate = new Date().getDate();
   const todayYear = new Date().getFullYear();
   const todayMonth = new Date().getMonth();
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(
     months[new Date().getMonth()]
@@ -67,11 +67,7 @@ const Calender = () => {
           {makeOptions(year)}
         </select>
       </div>
-      <div className={CalenderCSS.weakDays}>
-        {days.map((ele) => {
-          return <div className={CalenderCSS.day}>{ele}</div>;
-        })}
-      </div>
+      <WeekDays />
       <div className={CalenderCSS.dates}>
         {temp.map((ele, index) => {
           return (

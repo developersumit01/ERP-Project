@@ -6,20 +6,21 @@
   justify-content: center;
   background: linear-gradient(#345fb4, #bc91e5);
 }
-.backgroundCurve{
-display: flex;
-align-items: center;
-justify-content: center;
-/* min-height: 90dvh; */
-z-index: 2;
+.backgroundCurve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 90dvh; */
+  z-index: 2;
 }
 .backgroundContainer {
   width: 80%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px auto;
+  grid-template-rows: auto;
   /* display: flex; */
   min-height: 100dvh;
+  margin-top: 50px;
   /* flex-direction: column; */
   gap: 25px;
   /* margin-bottom: 20px; */
@@ -28,20 +29,27 @@ z-index: 2;
 }
 .backgroundHeader {
   display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  width: 80%;
+  height: 50px;
+  backdrop-filter: blur(10px);
+  z-index: 9;
   /* align-items: center; */
   justify-content: space-between;
   flex-wrap: wrap-reverse;
   padding: 0 20px 0 20px;
 }
-.forMobile{
+.forMobile {
   display: none;
 }
-.buttonImage{
+.buttonImage {
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  opacity: .2;
+  opacity: 0.2;
 }
 @media (width<700px) {
   .backgroundContainer {
@@ -52,7 +60,9 @@ z-index: 2;
   }
 }
 @media (width<400px) {
-  .arrow,.middleButton,.rightButton{
+  .arrow,
+  .middleButton,
+  .rightButton {
     display: none;
   }
   .header {
@@ -60,16 +70,16 @@ z-index: 2;
     justify-content: center;
     flex-direction: column-reverse;
   }
-  .forMobile{
+  .forMobile {
     display: unset;
     width: 100%;
   }
-  .upperButton{
+  .upperButton {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .mobileMiddleButton{
+  .mobileMiddleButton {
     display: flex;
     align-items: center;
     justify-content: center;

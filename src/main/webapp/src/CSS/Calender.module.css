@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 .weakDays {
-  width: 300px;
+  width: 400px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
@@ -20,7 +20,7 @@
   font-weight: 600;
 }
 .dates {
-  width: 300px;
+  width: 400px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   row-gap: 8px;
@@ -69,7 +69,7 @@
 .dateNumber:focus {
   background-color: #65ffde;
 }
-@media (width<350px) {
+@media (width<420px) {
   .dates,
   .weakDays {
     width: 100%;

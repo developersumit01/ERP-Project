@@ -82,12 +82,11 @@ const Dashboard = () => {
   const [session, setSession] = useState("2023-24");
   return (
     <>
-    <Outlet />
     <div className={DashboardCSS.mainDashboardContainer}>
         <div className={DashboardCSS.dashboardContainer}>
           <div className={DashboardCSS.dashboardHeader}>
             <div className={`${DashboardCSS.info}`}>
-            <Link to={'/profile'} className={`${UttilCSS.link} ${DashboardCSS.info}`}>
+            <Link to={`${name}`} className={`${UttilCSS.link} ${DashboardCSS.info}`}>
               <span className={DashboardCSS.userName}>{name}</span>
               <span className={DashboardCSS.detail}>{`Course : ${course}`}</span>
               <span className={DashboardCSS.detail}>{`Section : ${section}`}</span>

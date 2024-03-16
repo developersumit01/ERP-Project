@@ -1,6 +1,8 @@
 import BackgroundCSS from"../CSS/Background.module.css";
 import bottumImage from '../assets/images/bottumImage.svg';
 import MyProfile from "./MyProfile";
+import TimeTable from "./TimeTable";
+import Calender from './Calender'
 
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
@@ -33,8 +35,7 @@ const Background = () => {
   return (
     <>
       <div className={BackgroundCSS.mainBackgroundContainer}>
-        <div className={BackgroundCSS.backgroundContainer}>
-          <div className={BackgroundCSS.backgroundHeader}>
+      <div className={BackgroundCSS.backgroundHeader}>
             <div className={BackgroundCSS.arrow}>{"<"}</div>
             <div className={BackgroundCSS.middleButton}>
               <span>Attandance</span>
@@ -52,9 +53,12 @@ const Background = () => {
               </div>
             </div>
           </div>
+        <div className={BackgroundCSS.backgroundContainer}>
+          
 
           <div className={BackgroundCSS.backgroundCurve}>
-            <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} />
+            {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
+            <TimeTable />
             {/* <Calender /> */}
           </div>
           <img src={bottumImage} alt="" className={BackgroundCSS.buttonImage} />

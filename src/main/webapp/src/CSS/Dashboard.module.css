@@ -91,6 +91,7 @@
 }
 .cardContainer {
   display: grid;
+  margin-bottom: 30px;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 2rem;
   width: 100%;
