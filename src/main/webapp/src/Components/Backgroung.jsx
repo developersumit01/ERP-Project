@@ -57,8 +57,8 @@ const Background = () => {
           
 
           <div className={BackgroundCSS.backgroundCurve}>
-            {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
-            <TimeTable />
+            <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} />
+            {/* <TimeTable /> */}
             {/* <Calender /> */}
           </div>
           <img src={bottumImage} alt="" className={BackgroundCSS.buttonImage} />

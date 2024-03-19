@@ -1,5 +1,4 @@
 .mainBackgroundContainer {
-  width: 100%;
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -9,17 +8,18 @@
 .backgroundCurve {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: center;
   /* min-height: 90dvh; */
   z-index: 2;
 }
 .backgroundContainer {
   width: 80%;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto; */
   /* display: flex; */
-  min-height: 100dvh;
+  min-height: calc(100dvh - 50px);
   margin-top: 50px;
   /* flex-direction: column; */
   gap: 25px;
