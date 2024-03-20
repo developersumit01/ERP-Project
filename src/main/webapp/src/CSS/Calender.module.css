@@ -19,6 +19,17 @@
   align-items: center;
   font-weight: 600;
 }
+.day > input{
+  display: none;
+}
+.day label{
+  cursor: pointer;
+}
+.day > input:checked ~ label{
+  background-color: #5fd4e9;
+  border-radius: 5px;
+  padding: 5px;
+}
 .dates {
   width: 400px;
   display: grid;
