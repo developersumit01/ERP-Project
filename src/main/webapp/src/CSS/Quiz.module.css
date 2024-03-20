@@ -1,0 +1,53 @@
+.container {
+  height: calc(100dvh - 50px);
+  width: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.progressBar {
+  height: 30px;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  border-radius: 14px;
+  background-color: #05518b;
+  padding: 0 4px 0 4px;
+}
+.progressBar img {
+  position: absolute;
+  right: 20px;
+}
+.time {
+  position: absolute;
+  left: 20px;
+}
+.progress {
+  /* width: 100%; */
+  border-radius: 10px;
+  background-color: #46d9bf;
+  height: 80%;
+}
+.startQuiz {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.startQuiz span {
+  width: 100px;
+  background-color: #05518b;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+.bgRed{
+      background-color: #d94646;
+}

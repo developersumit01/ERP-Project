@@ -3,6 +3,7 @@ import bottumImage from '../assets/images/bottumImage.svg';
 import MyProfile from "./MyProfile";
 import TimeTable from "./TimeTable";
 import Calender from './Calender'
+import Quiz from "./Quiz";
 
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
@@ -58,7 +59,8 @@ const Background = () => {
 
           <div className={BackgroundCSS.backgroundCurve}>
             {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
-            <TimeTable />
+            {/* <TimeTable /> */}
+            <Quiz />
             {/* <Calender /> */}
           </div>
           <img src={bottumImage} alt="" className={BackgroundCSS.buttonImage} />
