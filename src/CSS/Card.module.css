@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.innerCard{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F5F6FC;
+    
+  box-shadow: 7px 5px 20px 3px #231e1ec9;
+    border-radius: 10px;
+    width: 10rem;
+    height: 9rem;
+}
+.innerCard img{
+    filter: drop-shadow(10px 2px 4px #231e1ec9);
+}
+.innerCard:hover{
+    scale: 1.1;
+    background-color: #aeb0bd;
+    color: #fff;
+    /* transition: ease-in-out; */
+    transition: .5s ease-in-out;
+}
+@media (width<370px) {
+    .innerCard {
+      width: 70%;
+    }
+  }

@@ -1,0 +1,206 @@
+
+.main{
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.background{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("/Web Projects With Java/ERP Portal/src/main/webapp/images/university-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(2px);
+}
+
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: flex-end;
+  background-color: #a7a7f9bf;
+  box-shadow: 18px 1px 6px 2px #231e1ec9;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.nav span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.nav :nth-child(1){
+  width: 60px;
+  height: 30px;
+  border-radius: 8px;
+  border: 2px solid red;
+}
+
+.nav :nth-child(2){
+  width: 130px;
+  height: 30px;
+  border-radius: 8px;
+  border: 2px solid red;
+}
+
+.loginContainer,.forgetPasswordContainer,.adminContainer{
+  position:absolute;
+  height: 80dvh; 
+  width: 20rem;
+  background-color: #a7a7f9bf;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+  box-shadow: 11px 9px 20px 0px #231e1ec9;
+}
+.emailBox,.passwordBox,.submitBox{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emailBox input,.passwordBox input{
+  height: 2rem;
+  width: 80%;
+  padding: 0 5px 0 5px;
+  border: unset;
+  border-bottom: 1px solid #9288e9;
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.borderAnimation{
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0px;
+}
+
+.emailBox input:focus~.borderAnimation,.passwordBox input:focus~.borderAnimation{
+  border: unset;
+  border-bottom: 1px solid #2c2929;
+  background-color: transparent;
+  width: 80%;
+  left: 10%;
+  transition: 0.4s;
+}
+
+.loginIcon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.loginIcon label{
+  font-size: 20px;
+  font-weight: 700;
+}
+.submitBox{
+  position: relative;
+  bottom: 30px;
+}
+.submitBox input{
+  /* position: relative; */
+  height: 2rem;
+  width: 80%;
+  /* bottom: 20px; */
+  font-size: 18px;
+  font-weight: 700;
+  border-color: unset;
+  border-radius: 10px;
+  box-shadow: 7px 5px 20px 3px #231e1ec9;
+  background-color: #1f41d65e;
+  cursor: pointer;
+}
+.submitBox img{
+  position: absolute;
+  /* top: -20px; */
+  /* display: none; */
+  right: 40px;
+  filter: invert();
+}
+.displayNone{
+  display: none;
+}
+
+.logo img{
+  position: relative;
+  top: 20px;
+}
+.forgetPassword{
+  width: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px 0 10px;
+  bottom: 10px;
+}
+.forgetPasswordAdmin{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  bottom: 10px;
+}
+.link{
+  color: #2b2828;
+  text-decoration: none;
+  cursor: pointer;
+}
+.link:hover{
+  color: #5a5b5c;
+}
+@media  (width<500px) {
+  .loginContainer,.forgetPasswordContainer,.adminContainer{
+    height: 80dvh;
+    width: 80vw;
+  }
+}
+@media (width>1500px) {
+  
+  .loginContainer,.forgetPasswordContainer,.adminContainer{
+    height: 80dvh;
+    width: 20rem;
+  }
+  .emailBox input,.passwordBox input,.loginIcon label{
+    font-size: 26px;
+  }
+  .loginIcon img,.logo img{
+    height: 7rem;
+  }
+}
+@media (height<500px) {
+  .loginIcon label,.emailBox input,.passwordBox input{
+    font-size: 15px;
+  }
+  .loginIcon img{
+    width: 60%;
+  }
+  .logo{
+    display: none;
+  }
+  .emailBox input,.passwordBox input{
+    height: 1.5rem;
+  }
+  .loginContainer{
+    height: 100dvh;
+    width: 90vw;
+  }
+}

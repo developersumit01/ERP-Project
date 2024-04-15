@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.inputContainer {
+  width: 90%;
+  display: flex;
+  gap: 10px;
+}
+.inputContainer .input {
+  position: relative;
+  display: flex;
+  flex-grow: 2;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #345fb4;
+}
+.inputContainer .input textarea {
+  resize: none;
+  height: 2rem;
+  flex-grow: 2;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  width: 97%;
+  /* font-weight: 600; */
+  outline: none;
+}
+.lable {
+  font-weight: 600;
+  width: 12rem;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+}
+.borderAnimation {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0px;
+}
+
+.inputContainer .input textarea:focus + .borderAnimation {
+  border: unset;
+  border-bottom: 1px solid #2c2929;
+  background-color: transparent;
+  width: 100%;
+  left: 0%;
+  transition: 0.4s;
+}
+.inputContainer .input textarea:focus{
+      border: none;
+}
+@media (width<1200px) {
+  .inputContainer {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+@media (width<500px) {
+  .inputContainer .input textarea,
+  .lable {
+    font-weight: unset;
+    font-size: unset;
+  }
+  .lable {
+    width: 100%;
+    font-weight: 600;
+  }
+}
+@media (width<350px) {
+  .inputContainer {
+    width: 100%;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .inputContainer .input textarea {
+    width: 90%;
+  }
+}

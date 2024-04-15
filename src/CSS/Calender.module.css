@@ -1,0 +1,91 @@
+.calenderContainer {
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  flex-direction: column;
+}
+.weakDays {
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.day > input{
+  display: none;
+}
+.day label{
+  cursor: pointer;
+}
+.day > input:checked ~ label{
+  background-color: #5fd4e9;
+  border-radius: 5px;
+  padding: 5px;
+}
+.dates {
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 8px;
+  /* border: 1px solid; */
+}
+.date {
+  /* border: 1px solid; */
+  height: 30px;
+  width: 30px;
+}
+.dateNumber {
+  cursor: pointer;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selectOption {
+  width: 10rem;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 600;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #345fb4;
+  /* border: none;
+  border-radius: 5px; */
+}
+
+.colorRed {
+  background-color: #fa5151;
+}
+.todayDate {
+  background-color: #1fff01;
+}
+.dateNumber:focus {
+  background-color: #65ffde;
+}
+@media (width<420px) {
+  .dates,
+  .weakDays {
+    width: 100%;
+  }
+  .date {
+    width: unset;
+  }
+}
