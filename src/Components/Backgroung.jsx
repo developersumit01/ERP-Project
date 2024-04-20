@@ -4,6 +4,8 @@ import MyProfile from "./MyProfile";
 import TimeTable from "./TimeTable";
 import Calender from './Calender'
 import Quiz from "./Quiz";
+import { Outlet } from "react-router-dom";
+import FeesDue from "./FeesDue";
 
 const acadmicInfo=[
   { name: "Name", value: "Sumit Kumar", editable: false },
@@ -35,6 +37,7 @@ const personalData = [
 const Background = () => {
   return (
     <>
+    {/* // <Outlet /> */}
       <div className={BackgroundCSS.mainBackgroundContainer}>
       <div className={BackgroundCSS.backgroundHeader}>
             <div className={BackgroundCSS.arrow}>{"<"}</div>
@@ -55,13 +58,12 @@ const Background = () => {
             </div>
           </div>
         <div className={BackgroundCSS.backgroundContainer}>
-          
-
           <div className={BackgroundCSS.backgroundCurve}>
             {/* <MyProfile acadmicInfo={acadmicInfo} personalData={personalData} /> */}
             {/* <TimeTable /> */}
             <Quiz />
             {/* <Calender /> */}
+            {/* <FeesDue /> */}
           </div>
           <img src={bottumImage} alt="" className={BackgroundCSS.buttonImage} />
         </div>
