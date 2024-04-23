@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { Suspense } from "react";
 // this is file is for uttility class of the css
-import utillityCSS from '../CSS/Uttil.module.css';
+import utillityCSS from "../CSS/Uttil.module.css";
 import Loading from "./Loading";
 import TimeTable from "./TimeTable";
+import PersonalInformationContextProvider from "../Context/PersonalInformationContext";
+import AcadmicInformationContextProvider from "../Context/AcadmicInformationContext";
 const UserLogin = React.lazy(() => import("./UserLogin"));
 const Background = React.lazy(() => import("./Backgroung"));
 const Dashboard = React.lazy(() => import("./Dashboard"));
@@ -15,7 +17,11 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <Suspense fallback={<Loading />}>
-        <Background />
+        <PersonalInformationContextProvider>
+          <AcadmicInformationContextProvider>
+            <Background />
+          </AcadmicInformationContextProvider>
+        </PersonalInformationContextProvider>
       </Suspense>
     ),
   },
@@ -42,7 +48,7 @@ const router = createBrowserRouter([
         <Dashboard />
       </Suspense>
     ),
-    children:[
+    children: [
       {
         path: ":profile",
         element: (
@@ -53,7 +59,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
 ]);
 const App = () => {
   return (

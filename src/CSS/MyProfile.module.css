@@ -21,6 +21,8 @@
   justify-content: center;
   flex-direction: column;
   gap: 15px;
+  margin-bottom: 50px;
+  z-index: 10;
 }
 .personalInfo {
   width: 90%;

@@ -7,6 +7,7 @@
   width: 90%;
   display: flex;
   gap: 10px;
+  position: relative;
 }
 .inputContainer .input {
   position: relative;
@@ -25,6 +26,7 @@
   width: 97%;
   /* font-weight: 600; */
   outline: none;
+  padding-left: 10px;
 }
 .lable {
   font-weight: 600;
@@ -39,6 +41,14 @@
   left: 50%;
   width: 0px;
 }
+.error{
+  font-size: 12px;
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ac2b2b;
+  bottom: -16px;
+  left: 5px;
+}
 
 .inputContainer .input textarea:focus + .borderAnimation {
   border: unset;
@@ -50,6 +60,11 @@
 }
 .inputContainer .input textarea:focus{
       border: none;
+}
+
+.lockIcon img{
+  width: 16px;
+  cursor: pointer;
 }
 @media (width<1200px) {
   .inputContainer {
