@@ -1,17 +1,46 @@
 import InputField from "./InputField";
 import MyProfileCSS from "../CSS/MyProfile.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useFormValidate from "../hooks/useFormValidate";
 import { AcadmicInformationContext } from "../Context/AcadmicInformationContext";
 import { PersonalInformationContext } from "../Context/PersonalInformationContext";
+import { useLocation, useOutletContext } from "react-router-dom";
+import studentProfile from "../assets/images/studentProfile.png";
+import axios from "axios";
+import { AuthContext } from "../Context/AuthContext";
 
-const MyProfile = ({ acadmicDataError, personalDataError }) => {
+const MyProfile = () => {
+  const [auth]=useContext(AuthContext);
+  const [acadmicDataError, personalDataError] = useOutletContext();
+  const location = useLocation();
+
   const [acadmicInformation, setAcadmicInformation] = useContext(
     AcadmicInformationContext
   );
   const [personalformation, setPersonalInformation] = useContext(
     PersonalInformationContext
   );
+
+  useEffect(() => {
+    if (location.state) {
+      if (location.state.option === "Student") {
+        axios
+          // .get(`https://school-erp-api.vercel.app/${auth.userId}/dashboard`, {
+          .get(`http://localhost:3000/${auth.userId}/new`, {
+            params: location.state,
+          })
+          .then((response) => {
+            const { data } = response;
+            setPersonalInformation(data.personalInformation);
+            setAcadmicInformation(data.acadmicInformation);
+          })
+          .catch((error) => {
+            console.log("The error is", error);
+          });
+      }
+    }
+  }, []);
+
   const handleAcadmicInfo = (event) => {
     setAcadmicInformation((prev) => ({
       ...prev,
@@ -64,13 +93,14 @@ const MyProfile = ({ acadmicDataError, personalDataError }) => {
                   handleChange={handlePersonalInfo}
                   error={personalDataError[ele.name]}
                   edit={ele.edit}
+                  newData={ele.newData?ele.newData:false}
                   handleEditClick={handleEditClickPersonalInfo}
                 />
               );
             })}
           </div>
           <div className={MyProfileCSS.photo}>
-            <img src={""} alt="Profile Image" />
+            <img src={studentProfile} alt="Profile Image" />
           </div>
         </div>
         <div className={MyProfileCSS.personalInfo}>
@@ -83,6 +113,7 @@ const MyProfile = ({ acadmicDataError, personalDataError }) => {
                 handleChange={handleAcadmicInfo}
                 error={acadmicDataError[ele.name]}
                 edit={ele.edit}
+                newData={ele.newData?ele.newData:false}
                 handleEditClick={handleEditClickAcadmicInfo}
               />
             );

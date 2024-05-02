@@ -32,7 +32,7 @@
 }
 .photo img {
   /* background-size: cover; */
-  width: 10rem;
+  width: 150px;
   position: relative;
   top: -20px;
   left: -20px;

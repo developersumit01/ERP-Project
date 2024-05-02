@@ -1,6 +1,6 @@
 .container {
   min-height: calc(100dvh - 50px);
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -164,4 +164,15 @@ header{
 }
 .successIcon{
   width: 50%;
+}
+
+@media (width<450px) {
+  .container{
+    width: 100%;
+  }
+}
+@media (width<1000px )and( width>450px) {
+  .container{
+    width: 70%;
+  }
 }

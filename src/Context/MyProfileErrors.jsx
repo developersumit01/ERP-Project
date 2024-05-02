@@ -124,7 +124,7 @@ export const error = {
         { "error name": "required", regex: /\S/, message: "Email is required" },
         {
           "error name": "Email ID",
-          regex: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
+          regex: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
           message: "Enter valid email id",
         },
       ],

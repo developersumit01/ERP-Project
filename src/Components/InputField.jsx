@@ -8,6 +8,7 @@ const InputField = ({
   handleChange,
   error,
   edit,
+  newData,
   handleEditClick,
 }) => {
   return (
@@ -19,15 +20,15 @@ const InputField = ({
             name={name}
             type="text"
             value={value}
-            readOnly={!edit}
+            readOnly={newData?false:!edit}
             onChange={handleChange}
           />
           <span className={InputFieldCSS.borderAnimation}></span>
-          {!editable ? (
+          {!newData&&!editable ? (
             <span className={InputFieldCSS.lockIcon}>
               <img src={lockIcon} alt="Lock Icon" title="Can't Edit" />
             </span>
-          ) : !edit ? (
+          ) : !newData&&!edit ? (
             <span className={InputFieldCSS.lockIcon}>
               <img
                 src={EditIcon}

@@ -1,0 +1,19 @@
+select {
+  width: 98%;
+  height: 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  border-bottom-width: medium;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  box-shadow: 7px 10px 16px 3px #231e1ec9;
+  border-radius: 7px;
+  padding: 0 10px;
+  cursor: pointer;
+  /* border-bottom: 1.5px solid aliceblue; */
+}
+option{
+      cursor: pointer;
+}
