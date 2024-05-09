@@ -179,8 +179,8 @@ const Dashboard = () => {
   console.log("auth in dashboard", auth);
   useEffect(() => {
     axios
-      // .get(`https://school-erp-api.vercel.app/${auth.userId}/dashboard`, {
-      .get(`http://localhost:3000/${auth.userId}/dashboard`, {
+      .get(`https://school-erp-api.vercel.app/${auth.userId}/dashboard`, {
+      // .get(`http://localhost:3000/${auth.userId}/dashboard`, {
         params: auth,
       })
       .then((response) => {
@@ -257,6 +257,7 @@ const Dashboard = () => {
                 {cardItems.map((ele) => {
                   return (
                     <Card
+                    key={ele.name}
                       icon={ele.icon}
                       tittle={ele.name}
                       URL={`/${personalInformation.Name.value}/${ele.URL}`}

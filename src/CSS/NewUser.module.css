@@ -25,3 +25,16 @@ button {
   background-color: #1f41d65e;
   cursor: pointer;
 }
+.selectOption {
+  resize: none;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  width: 97%;
+  font-weight: 600;
+  outline: none;
+  padding-left: 10px;
+  color: black;
+  border-bottom: 1px solid;
+  padding: 5px;
+}

@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { Link, Outlet, useNavigate, useOutletContext } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import axios from "axios";
+import { EditUserContext } from "../Context/EditUserContextProvider";
 
 function UserLogin({ admin }) {
   // const user = {
@@ -15,7 +16,7 @@ function UserLogin({ admin }) {
   //   password: "Sumit@123",
   // };
   const [auth, setAuth] = useContext(AuthContext);
-
+const [editUser,setEditUser]=useContext(EditUserContext);
   const [loginData, setLoginData] = useState({
     userId: "",
     password: "",
@@ -30,11 +31,11 @@ function UserLogin({ admin }) {
   const handleLogin = async () => {
     let URL = undefined;
     if (admin) {
-      // URL="https://school-erp-api.vercel.app/login/admin";
-      URL = "http://localhost:3000/login/admin";
+      URL="https://school-erp-api.vercel.app/login/admin";
+      // URL = "http://localhost:3000/login/admin";
     } else {
-      // URL="https://school-erp-api.vercel.app/login";
-      URL = "http://localhost:3000/login";
+      URL="https://school-erp-api.vercel.app/login";
+      // URL = "http://localhost:3000/login";
     }
     axios
       .post(URL, loginData)
@@ -45,6 +46,11 @@ function UserLogin({ admin }) {
           setAuth(() => ({
             ...data,
           }));
+          setEditUser({
+            newUser:false,
+            edit:false,
+            role:data.role,
+          })
         }
       })
       .catch((error) => {

@@ -1,16 +1,16 @@
 import InputField from "./InputField";
 import MyProfileCSS from "../CSS/MyProfile.module.css";
-import { useContext, useEffect, useState } from "react";
-import useFormValidate from "../hooks/useFormValidate";
+import { useContext, useEffect } from "react";
 import { AcadmicInformationContext } from "../Context/AcadmicInformationContext";
 import { PersonalInformationContext } from "../Context/PersonalInformationContext";
 import { useLocation, useOutletContext } from "react-router-dom";
 import studentProfile from "../assets/images/studentProfile.png";
+import SelectOption from "./SelectOption";
 import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
 
 const MyProfile = () => {
-  const [auth]=useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
   const [acadmicDataError, personalDataError] = useOutletContext();
   const location = useLocation();
 
@@ -86,16 +86,34 @@ const MyProfile = () => {
           <div className={MyProfileCSS.acadmicData}>
             {Object.values(personalformation).map((ele) => {
               return (
-                <InputField
-                  name={ele.name}
-                  value={ele.value}
-                  editable={ele.editable}
-                  handleChange={handlePersonalInfo}
-                  error={personalDataError[ele.name]}
-                  edit={ele.edit}
-                  newData={ele.newData?ele.newData:false}
-                  handleEditClick={handleEditClickPersonalInfo}
-                />
+                <>
+                  {ele.options ? (
+                    <SelectOption
+                    name={ele.name}
+                    value={ele.value}
+                    values={ele.options}
+                    editable={ele.editable}
+                    handleChange={handlePersonalInfo}
+                    error={personalDataError[ele.name]}
+                    edit={ele.edit}
+                    newData={ele.newData ? ele.newData : false}
+                    handleEditClick={handleEditClickPersonalInfo}
+                    key={crypto.randomUUID()}
+                  />
+                  ) : (
+                    <InputField
+                      name={ele.name}
+                      value={ele.value}
+                      editable={ele.editable}
+                      handleChange={handlePersonalInfo}
+                      error={personalDataError[ele.name]}
+                      edit={ele.edit}
+                      newData={ele.newData ? ele.newData : false}
+                      handleEditClick={handleEditClickPersonalInfo}
+                      key={crypto.randomUUID()}
+                    />
+                  )}
+                </>
               );
             })}
           </div>
@@ -106,16 +124,34 @@ const MyProfile = () => {
         <div className={MyProfileCSS.personalInfo}>
           {Object.values(acadmicInformation).map((ele) => {
             return (
-              <InputField
-                name={ele.name}
-                value={ele.value}
-                editable={ele.editable}
-                handleChange={handleAcadmicInfo}
-                error={acadmicDataError[ele.name]}
-                edit={ele.edit}
-                newData={ele.newData?ele.newData:false}
-                handleEditClick={handleEditClickAcadmicInfo}
-              />
+              <>
+                {ele.options ? (
+                  <SelectOption
+                  name={ele.name}
+                  value={ele.value}
+                  values={ele.options}
+                  editable={ele.editable}
+                  handleChange={handleAcadmicInfo}
+                  error={acadmicDataError[ele.name]}
+                  edit={ele.edit}
+                  newData={ele.newData ? ele.newData : false}
+                  handleEditClick={handleEditClickAcadmicInfo}
+                  key={crypto.randomUUID()}
+                  />
+                ) : (
+                  <InputField
+                    name={ele.name}
+                    value={ele.value}
+                    editable={ele.editable}
+                    handleChange={handleAcadmicInfo}
+                    error={acadmicDataError[ele.name]}
+                    edit={ele.edit}
+                    newData={ele.newData ? ele.newData : false}
+                    handleEditClick={handleEditClickAcadmicInfo}
+                    key={crypto.randomUUID()}
+                  />
+                )}
+              </>
             );
           })}
         </div>

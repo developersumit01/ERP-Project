@@ -12,6 +12,7 @@ import Calender from "./Calender";
 import FeesDue from "./FeesDue";
 import Layout from "./Layout";
 import NewUser from "./AdminComponents/NewUser";
+import EditUserContextProvider from "../Context/EditUserContextProvider";
 // import MyProfile from "./MyProfile";
 const MyProfile = React.lazy(() => import("./MyProfile"));
 const UserLogin = React.lazy(() => import("./UserLogin"));
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
       <AuthContextProvider>
         <AcadmicInformationContextProvider>
           <PersonalInformationContextProvider>
-            <Layout />
+            <EditUserContextProvider>
+              <Layout />
+            </EditUserContextProvider>
           </PersonalInformationContextProvider>
         </AcadmicInformationContextProvider>
       </AuthContextProvider>

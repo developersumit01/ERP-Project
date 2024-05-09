@@ -1,19 +1,63 @@
-import React from "react";
-import SelectOptionCSS from "../CSS/SelectOption.module.css";
-const SelectOption = ({ name, value, values, handleOption }) => {
+import lockIcon from "../assets/Icons/ic_lock.svg";
+import InputFieldCSS from "../CSS/InputField.module.css";
+import EditIcon from "../assets/Icons/editIcon.png";
+const SelectOption = ({
+  name,
+  value,
+  values,
+  handleChange,
+  editable,
+  error,
+  edit,
+  newData,
+  handleEditClick,
+}) => {
   if (values[0] !== "Select") {
     values.unshift("Select");
   }
   return (
-    <select value={value} onChange={handleOption} >
-      {values.map((ele) => {
-        return (
-          <option value={ele} hidden={ele === "Select"} selected={value===ele}>
-            {ele}
-          </option>
-        );
-      })}
-    </select>
+    <div className={InputFieldCSS.inputContainer}>
+      <label className={InputFieldCSS.lable}>{`${name} : `}</label>
+      <div className={InputFieldCSS.input}>
+        <select
+          name={name}
+          value={value}
+          onChange={handleChange}
+          disabled={newData ? false : !edit}>
+          {values.map((ele) => {
+            return (
+              <option
+                value={ele}
+                hidden={ele === "Select"}
+                defaultValue={value === ele}
+                key={crypto.randomUUID()}
+                >
+
+              </option>
+            );
+          })}
+        </select>
+        <span className={InputFieldCSS.borderAnimation}></span>
+        {!newData && !editable ? (
+          <span className={InputFieldCSS.lockIcon}>
+            <img src={lockIcon} alt="Lock Icon" title="Can't Edit" />
+          </span>
+        ) : !newData && !edit ? (
+          <span className={InputFieldCSS.lockIcon}>
+            <img
+              src={EditIcon}
+              alt="Edit Icon"
+              title="Edit"
+              name={name}
+              onClick={handleEditClick}
+            />
+          </span>
+        ) : (
+          ""
+        )}
+        <span className={InputFieldCSS.error}>{error}</span>
+      </div>
+    </div>
   );
 };
 
