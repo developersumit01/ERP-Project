@@ -31,6 +31,7 @@ const MyProfile = () => {
           })
           .then((response) => {
             const { data } = response;
+            // console.log(response)
             setPersonalInformation(data.personalInformation);
             setAcadmicInformation(data.acadmicInformation);
           })
@@ -42,6 +43,7 @@ const MyProfile = () => {
   }, []);
 
   const handleAcadmicInfo = (event) => {
+    console.log("Value",event.target.value)
     setAcadmicInformation((prev) => ({
       ...prev,
       [event.target.name]: {
@@ -51,6 +53,7 @@ const MyProfile = () => {
     }));
   };
   const handlePersonalInfo = (event) => {
+    console.log("hello")
     setPersonalInformation((prev) => ({
       ...prev,
       [event.target.name]: {
@@ -85,6 +88,7 @@ const MyProfile = () => {
         <div className={MyProfileCSS.acadmicInfo}>
           <div className={MyProfileCSS.acadmicData}>
             {Object.values(personalformation).map((ele) => {
+              console.log(ele.value)
               return (
                 <>
                   {ele.options ? (
@@ -98,7 +102,7 @@ const MyProfile = () => {
                     edit={ele.edit}
                     newData={ele.newData ? ele.newData : false}
                     handleEditClick={handleEditClickPersonalInfo}
-                    key={crypto.randomUUID()}
+                    key={ele.name}
                   />
                   ) : (
                     <InputField
@@ -110,7 +114,7 @@ const MyProfile = () => {
                       edit={ele.edit}
                       newData={ele.newData ? ele.newData : false}
                       handleEditClick={handleEditClickPersonalInfo}
-                      key={crypto.randomUUID()}
+                      key={ele.name}
                     />
                   )}
                 </>
@@ -136,7 +140,7 @@ const MyProfile = () => {
                   edit={ele.edit}
                   newData={ele.newData ? ele.newData : false}
                   handleEditClick={handleEditClickAcadmicInfo}
-                  key={crypto.randomUUID()}
+                  key={ele.name}
                   />
                 ) : (
                   <InputField
@@ -148,7 +152,7 @@ const MyProfile = () => {
                     edit={ele.edit}
                     newData={ele.newData ? ele.newData : false}
                     handleEditClick={handleEditClickAcadmicInfo}
-                    key={crypto.randomUUID()}
+                    key={ele.name}
                   />
                 )}
               </>

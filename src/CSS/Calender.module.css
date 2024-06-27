@@ -73,10 +73,12 @@
 }
 
 .colorRed {
-  background-color: #fa5151;
-}
-.todayDate {
-  background-color: #1fff01;
+  color: #fa5151;
+  -webkit-text-stroke: 1px black;
+  }
+  .todayDate {
+    color: #1fff01;
+    -webkit-text-stroke: 1px black;
 }
 .dateNumber:focus {
   background-color: #65ffde;

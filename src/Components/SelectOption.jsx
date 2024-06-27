@@ -23,8 +23,10 @@ const SelectOption = ({
           name={name}
           value={value}
           onChange={handleChange}
-          disabled={newData ? false : !edit}>
+          disabled={newData ? false : !edit}
+          >
           {values.map((ele) => {
+            console.log(ele)
             return (
               <option
                 value={ele}
@@ -32,7 +34,7 @@ const SelectOption = ({
                 defaultValue={value === ele}
                 key={crypto.randomUUID()}
                 >
-
+                  {ele}
               </option>
             );
           })}

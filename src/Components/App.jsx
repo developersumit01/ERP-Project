@@ -13,6 +13,7 @@ import FeesDue from "./FeesDue";
 import Layout from "./Layout";
 import NewUser from "./AdminComponents/NewUser";
 import EditUserContextProvider from "../Context/EditUserContextProvider";
+import Assignment from "./Assignment";
 // import MyProfile from "./MyProfile";
 const WorkingSite = React.lazy(()=>import("./WorkingSite"));
 const MyProfile = React.lazy(() => import("./MyProfile"));
@@ -145,6 +146,14 @@ const router = createBrowserRouter([
               </Suspense>
             ),
             // element:<MyProfile />
+          },
+          {
+            path:"/:userName/assignment",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Assignment />
+              </Suspense>
+            ),
           },
         ],
       },

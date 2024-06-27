@@ -31,11 +31,11 @@ const [editUser,setEditUser]=useContext(EditUserContext);
   const handleLogin = async () => {
     let URL = undefined;
     if (admin) {
-      URL="https://school-erp-api.vercel.app/login/admin";
-      // URL = "http://localhost:3000/login/admin";
+      // URL="https://school-erp-api.vercel.app/login/admin";
+      URL = "http://localhost:3000/login/admin";
     } else {
-      URL="https://school-erp-api.vercel.app/login";
-      // URL = "http://localhost:3000/login";
+      // URL="https://school-erp-api.vercel.app/login";
+      URL = "http://localhost:3000/login";
     }
     axios
       .post(URL, loginData)
