@@ -8,9 +8,12 @@ import { PersonalInformationContext } from "../Context/PersonalInformationContex
 import { AcadmicInformationContext } from "../Context/AcadmicInformationContext";
 import { AuthContext } from "../Context/AuthContext";
 import { EditUserContext } from "../Context/EditUserContextProvider";
+
 import axios from "axios";
 
 const Background = () => {
+  const reDirect=useNavigate();
+  const [userAuth]=useContext(AuthContext);
   const [personalDataError, setPersonalDataError] = useState({});
   const [acadmicDataError, setAcadmicDataError] = useState({});
   const [everyThingOk, setEveryThingOk] = useState(false);
@@ -27,7 +30,7 @@ const Background = () => {
     setAcadmicDataError(useFormValidate(Object.values(acadmicData), error));
     setSubmitData(true);
   };
-console.log("code ka bhar se ",everyThingOk)
+console.log("code ka bhar se ",everyThingOk,submitData)
   useEffect(() => {
    if(submitData){
     console.log("use Effect is called for every thing ok",everyThingOk);
@@ -79,6 +82,7 @@ console.log("code ka bhar se ",everyThingOk)
       })
       .then((response) => {
         console.log(response);
+        navigate(`/${userAuth.name}/new`);
       })
       .catch((error) => {
         console.log(error);
