@@ -45,7 +45,6 @@ const NewUser = () => {
       let year = "" + d.getFullYear();
       const recordId =
         year[2] + year[3] + (parseInt(year[2] + year[3]) + 1) + branch;
-      console.log(recordId);
       setBranch(branch);
       setBranchName(e.target.options[e.target.selectedIndex].text);
       setRecordId(recordId);

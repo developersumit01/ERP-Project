@@ -14,6 +14,7 @@ import Layout from "./Layout";
 import NewUser from "./AdminComponents/NewUser";
 import EditUserContextProvider from "../Context/EditUserContextProvider";
 import Assignment from "./Assignment";
+import DateSheet from "./DateSheet";
 // import MyProfile from "./MyProfile";
 const WorkingSite = React.lazy(()=>import("./WorkingSite"));
 const MyProfile = React.lazy(() => import("./MyProfile"));
@@ -152,6 +153,14 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={<Loading />}>
                 <Assignment />
+              </Suspense>
+            ),
+          },
+          {
+            path:"/:userName/date sheet",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <DateSheet />
               </Suspense>
             ),
           },

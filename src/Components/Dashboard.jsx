@@ -60,11 +60,6 @@ const studentCardItems = [
     URL:"date sheet",
   },
   {
-    name: "Ask Doubts",
-    icon: doubtsIcon,
-    URL:"ask doubts",
-  },
-  {
     name: "School Gallery",
     icon: galleryIcon,
     URL:"school gallery",

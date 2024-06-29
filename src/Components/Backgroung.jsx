@@ -17,6 +17,7 @@ const Background = () => {
   const [personalData, setPersonalData] = useContext(
     PersonalInformationContext
   );
+  const [submitData,setSubmitData]=useState(false);
   const [acadmicData, setAcadmicData] = useContext(AcadmicInformationContext);
   const [editUser, setEditUser] = useContext(EditUserContext);
   const [edit, setEdit] = useState(false);
@@ -24,9 +25,12 @@ const Background = () => {
   const handleSubmit = () => {
     setPersonalDataError(useFormValidate(Object.values(personalData), error));
     setAcadmicDataError(useFormValidate(Object.values(acadmicData), error));
+    setSubmitData(true);
   };
-
+console.log("code ka bhar se ",everyThingOk)
   useEffect(() => {
+   if(submitData){
+    console.log("use Effect is called for every thing ok",everyThingOk);
     if (
       Object.keys(acadmicDataError).length > 0 ||
       Object.keys(personalDataError).length > 0
@@ -41,13 +45,16 @@ const Background = () => {
         delete acadmicData[data].newData;
       });
       console.log("use effect call");
+      
       setEveryThingOk(true);
+      console.log("use Effect is called",everyThingOk);
     }
+   }
   }, [personalDataError, acadmicDataError]);
 
   console.log("Edit user", editUser);
   useEffect(() => {
-    console.log("use Effect is called");
+    console.log("use Effect is called jaha se m chata tha ",everyThingOk);
     if (everyThingOk) {
       console.log("use Effect is called inside if block");
       let URL = undefined;
@@ -61,6 +68,7 @@ const Background = () => {
         URL = "http://localhost:3000/new/teacher";
         console.log("The URL is set for POST the data for teacher");
       }
+      console.log(URL)
      if(URL){
       axios
       .post(URL, {

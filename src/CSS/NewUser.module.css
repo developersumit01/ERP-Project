@@ -37,4 +37,5 @@ button {
   color: black;
   border-bottom: 1px solid;
   padding: 5px;
+  flex-grow: unset;
 }

@@ -26,7 +26,6 @@ const SelectOption = ({
           disabled={newData ? false : !edit}
           >
           {values.map((ele) => {
-            console.log(ele)
             return (
               <option
                 value={ele}
